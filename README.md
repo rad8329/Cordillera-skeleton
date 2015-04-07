@@ -14,3 +14,4 @@ REQUIREMENTS
 1. Create a data base
 2. Import data from `app/modules/examples/sql/schema.zip`
 3. Configure the data base properties in `app/config/web/dev.php`
+4. Located in the project root path, execute command `composer install`
