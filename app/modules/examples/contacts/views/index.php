@@ -2,6 +2,7 @@
 use cordillera\base\Application;
 
 /** @var \cordillera\middlewares\View $this */
+
 $this->layout->registerJsFile("//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js");
 $this->layout->registerJsFile(Application::getRequest()->base_url . "/media/modules/examples/contacts/js/contacts.js");
 $this->layout->registerCssFile(Application::getRequest()->base_url . "/media/modules/examples/contacts/css/contacts.css");
@@ -55,11 +56,11 @@ $this->layout->registerCssFile(Application::getRequest()->base_url . "/media/mod
                         <div class="col-xs-12 col-sm-9">
                             <span class="name">Seth Frazier</span><br/>
                             <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="7396 E North St"></span>
-                            <<span class="text-muted">7396 E North St</span><br/>
+                            <span class="text-muted">7396 E North St</span><br/>
                             <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(560) 180-4143"></span>
-                            <<span class="text-muted">(560) 180-4143</span><br/>
+                            <span class="text-muted">(560) 180-4143</span><br/>
                             <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="seth.frazier@example.com"></span>
-                            <<span class="text-muted">seth.frazier@example.com</span><br/>
+                            <span class="text-muted">seth.frazier@example.com</span><br/>
                         </div>
                         <div class="clearfix"></div>
                     </li>
@@ -70,11 +71,11 @@ $this->layout->registerCssFile(Application::getRequest()->base_url . "/media/mod
                         <div class="col-xs-12 col-sm-9">
                             <span class="name">Jean Myers</span><br/>
                             <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="4949 W Dallas St"></span>
-                            <<span class="text-muted">4949 W Dallas St</span><br/>
+                            <span class="text-muted">4949 W Dallas St</span><br/>
                             <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(477) 792-2822"></span>
-                            <<span class="text-muted">(477) 792-2822</span><br/>
+                            <span class="text-muted">(477) 792-2822</span><br/>
                             <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="jean.myers@example.com"></span>
-                            <<span class="text-muted">jean.myers@example.com</span><br/>
+                            <span class="text-muted">jean.myers@example.com</span><br/>
                         </div>
                         <div class="clearfix"></div>
                     </li>
@@ -85,11 +86,11 @@ $this->layout->registerCssFile(Application::getRequest()->base_url . "/media/mod
                         <div class="col-xs-12 col-sm-9">
                             <span class="name">Todd Shelton</span><br/>
                             <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="5133 Pecan Acres Ln"></span>
-                            <<span class="text-muted">5133 Pecan Acres Ln</span><br/>
+                            <span class="text-muted">5133 Pecan Acres Ln</span><br/>
                             <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(522) 991-3367"></span>
-                            <<span class="text-muted">(522) 991-3367</span><br/>
+                            <span class="text-muted">(522) 991-3367</span><br/>
                             <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="todd.shelton@example.com"></span>
-                            <<span class="text-muted">todd.shelton@example.com</span><br/>
+                            <span class="text-muted">todd.shelton@example.com</span><br/>
                         </div>
                         <div class="clearfix"></div>
                     </li>
@@ -100,11 +101,11 @@ $this->layout->registerCssFile(Application::getRequest()->base_url . "/media/mod
                         <div class="col-xs-12 col-sm-9">
                             <span class="name">Rosemary Porter</span><br/>
                             <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="5267 Cackson St"></span>
-                            <<span class="text-muted">5267 Cackson St</span><br/>
+                            <span class="text-muted">5267 Cackson St</span><br/>
                             <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(497) 160-9776"></span>
-                            <<span class="text-muted">(497) 160-9776</span><br/>
+                            <span class="text-muted">(497) 160-9776</span><br/>
                             <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="rosemary.porter@example.com"></span>
-                            <<span class="text-muted">rosemary.porter@example.com</span><br/>
+                            <span class="text-muted">rosemary.porter@example.com</span><br/>
                         </div>
                         <div class="clearfix"></div>
                     </li>
@@ -115,11 +116,11 @@ $this->layout->registerCssFile(Application::getRequest()->base_url . "/media/mod
                         <div class="col-xs-12 col-sm-9">
                             <span class="name">Debbie Schmidt</span><br/>
                             <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="3903 W Alexander Rd"></span>
-                            <<span class="text-muted">3903 W Alexander Rd</span><br/>
+                            <span class="text-muted">3903 W Alexander Rd</span><br/>
                             <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(867) 322-1852"></span>
-                            <<span class="text-muted">(867) 322-1852</span><br/></span>
+                            <span class="text-muted">(867) 322-1852</span><br/></span>
                             <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="debbie.schmidt@example.com"></span>
-                            <<span class="text-muted">debbie.schmidt@example.com</span><br/>
+                            <span class="text-muted">debbie.schmidt@example.com</span><br/>
                         </div>
                         <div class="clearfix"></div>
                     </li>
@@ -130,11 +131,11 @@ $this->layout->registerCssFile(Application::getRequest()->base_url . "/media/mod
                         <div class="col-xs-12 col-sm-9">
                             <span class="name">Glenda Patterson</span><br/>
                             <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="5020 Poplar Dr"></span>
-                            <<span class="text-muted">5020 Poplar Dr</span><br/>
+                            <span class="text-muted">5020 Poplar Dr</span><br/>
                             <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(538) 718-7548"></span>
-                            <<span class="text-muted">(538) 718-7548</span><br/>
+                            <span class="text-muted">(538) 718-7548</span><br/>
                             <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="glenda.patterson@example.com"></span>
-                            <<span class="text-muted">glenda.patterson@example.com</span><br/>
+                            <span class="text-muted">glenda.patterson@example.com</span><br/>
                         </div>
                         <div class="clearfix"></div>
                     </li>
