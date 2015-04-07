@@ -60,6 +60,6 @@ $loginForm = $model->fieldName("LoginForm");
 </div>
 <script type="text/javascript">
     jQuery(document).ready(function () {
-        jQuery("#link_2").addClass("active"); //Active link
+        jQuery("#link_3").addClass("active"); //Active link
     });
 </script>

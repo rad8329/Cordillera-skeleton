@@ -49,7 +49,7 @@ $this->post(function () use ($model, $view) {
             )
         );
 
-        Application::getRequest()->redirect(Application::getRequest()->base_url);
+        Application::getRequest()->redirect(Application::getRequest()->home);
     }
 
     $view->data = ['model' => $model];

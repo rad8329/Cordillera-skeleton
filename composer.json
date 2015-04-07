@@ -10,9 +10,6 @@
     "cordillera",
     "framework",
     "mysql",
-    "medellin",
-    "colombia",
-    "google-maps",
     "maps"
   ],
   "authors": [
@@ -23,6 +20,6 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "rad8329/Cordillera": "*"
+    "rad8329/cordillera": "*"
   }
 }

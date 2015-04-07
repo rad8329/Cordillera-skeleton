@@ -2,7 +2,7 @@
 
 //Make sure jQuery has been loaded before app.js
 if (typeof jQuery === "undefined") {
-    throw new Error("Routes module jQuery");
+    throw new Error("Routes module needs jQuery");
 }
 
 var Marker = function () {

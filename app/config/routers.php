@@ -4,5 +4,6 @@ return [
     ['/login', 'examples/site/login'],
     ['/logout', 'examples/site/logout'],
     ['/routes/get/[i:id]?', 'examples/routes/get'],
-    ['/routes/[i:id]?', 'examples/routes/index']
+    ['/routes/[i:id]?', 'examples/routes/index'],
+    ['/contacts', 'examples/contacts/index']
 ];
