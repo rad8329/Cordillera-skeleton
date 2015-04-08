@@ -2,7 +2,7 @@
 use \cordillera\base\Application;
 use \cordillera\helpers\Url;
 
-/** @var string $content Content of buffer */
+/** @var string $content */
 /** @var \cordillera\middlewares\Layout $this */
 ?>
 <!DOCTYPE html>

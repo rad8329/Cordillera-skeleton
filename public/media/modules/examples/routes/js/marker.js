@@ -43,6 +43,8 @@ var Marker = function () {
             });
         },
         init: function (id) {
+            jQuery("#link_1").addClass("active"); //Active link
+
             var map_element = jQuery("#map");
             jQuery(window).on('resize', function () {
                 map_element.css("height", jQuery(window).height() + "px");
