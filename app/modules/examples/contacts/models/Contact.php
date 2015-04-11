@@ -18,6 +18,9 @@ class Contact extends ActiveRecord
     public $created_at;
     public $updated_at;
 
+    /**
+     * @return bool
+     */
     public function validate()
     {
         if (empty($this->firstname)) {
@@ -35,5 +38,11 @@ class Contact extends ActiveRecord
         if (empty($this->phone)) {
             $this->addError("phone", Application::getLang()->translate("Phone is requiered."));
         }
+
+        if ($this->hasErrors()) {
+            return false;
+        }
+
+        return true;
     }
 }

@@ -18,8 +18,7 @@ $this->get(function () {
 
     /** @var Controller $this */
 
-    //$payload = Request::payload(); // If request method is POST
-    //$route = Route::findByPk($payload->id); // If request method is POST
+    //$route = Route::findByPk(Request::payload('id')); // If request method is POST and Payload
 
     $route = Route::findByPk(Request::get('id')); // If request method is GET
 

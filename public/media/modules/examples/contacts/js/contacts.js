@@ -5,35 +5,42 @@ if (typeof jQuery === "undefined") {
 }
 
 var Contact = function () {
+    var attributes = ['id', 'firstname', 'lastname', 'email', 'address', 'phone', 'created_at', 'updated_at'];
     return {
+        compile: function (data) {
+            if (Object.keys(data.errors).length > 0) {
+                jQuery.each(attributes, function (key, value) {
+                    if (data.errors[value] != undefined && data.errors[value].length > 0) {
+                        jQuery.each(data.errors[value], function (i, error) {
+                            jQuery("#field-" + value).addClass("has-error");
+                            jQuery("#field-" + value).append(
+                                "<div class=\"help-block\"><div class=\"clearfix\">" + error + "</div></div>"
+                            );
+                        });
+                    }
+                });
+            }
+            else {
+                jQuery('#add-contact').modal('hide');
+            }
+        },
         submit: function (element) {
 
-            var url = jQuery(element).attr("action");
-            var payload = {};
+            jQuery('#add-contact-form .has-error').removeClass();
+            jQuery("#add-contact-form .help-block").detach();
 
-            jQuery(element).serializeArray().map(function (item) {
-                if (payload[item.name]) {
-                    if (typeof(payload[item.name]) === "string") {
-                        payload[item.name] = [payload[item.name]];
-                    }
-                    payload[item.name].push(item.value);
-                } else {
-                    payload[item.name] = item.value;
-                }
-            });
+            var $this = this;
+            var url = jQuery(element).attr("action");
 
             jQuery.ajax({
                     url: url,
                     method: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify(payload),
+                    data: jQuery(element).serialize(),
                     success: function (data) {
-                        jQuery("#add-contact-body").html(data);
+                        $this.compile(data);
                     },
                     error: function (data) {
-                        if (typeof data === 'object') {
 
-                        }
                     }
                 }
             );
@@ -47,7 +54,6 @@ var Contact = function () {
 
             jQuery('a[href="#add-contact"]').on('click', function (event) {
                 event.preventDefault();
-                //console.log(jQuery(this).data("context-handler"));
                 jQuery("#add-contact-body").load(jQuery(this).data("context-handler"));
                 jQuery('#add-contact').modal('show');
             });

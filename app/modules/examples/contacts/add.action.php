@@ -1,7 +1,7 @@
 <?php
 namespace modules\examples\contacts;
 
-use cordillera\helpers\Crypt;
+use cordillera\base\Application;
 use cordillera\middlewares\Controller;
 use cordillera\middlewares\Layout;
 use cordillera\middlewares\Request;
@@ -10,17 +10,17 @@ use modules\examples\contacts\models\Contact;
 
 /** @var Controller $this */
 
-$view = new View("modules/examples/contacts/views/add", new Layout("main"));
 $model = new Contact();
 
 $this->filters(function () {
+
     /** @var Controller $this */
 
     $this->assertAjax();
 });
 
 
-$this->get(function () use ($view, $model) {
+$this->get(function () use ($model) {
 
     /** @var Controller $this */
 
@@ -30,31 +30,23 @@ $this->get(function () use ($view, $model) {
     $this->setResponse($view);
 });
 
-$this->post(function () use ($view, $model) {
+$this->post(function () use ($model) {
 
     /** @var Controller $this */
-    
-    $this->assertJsonContentType();
-
-    $view = new View("modules/examples/contacts/views/add", new Layout("main"));
-
-    $payload = Request::payload();
 
     $data = [
-        'firstname' => $payload->{Crypt::requestVar("firstname")},
-        'lastname' => $payload->{Crypt::requestVar("lastname")},
-        'email' => $payload->{Crypt::requestVar("email")},
-        'phone' => $payload->{Crypt::requestVar("phone")},
-        'address' => $payload->{Crypt::requestVar("address")}
+        'firstname' => Request::post("Contact.firstname"),
+        'lastname' => Request::post("Contact.lastname"),
+        'email' => Request::post("Contact.email"),
+        'phone' => Request::post("Contact.phone"),
+        'address' => Request::post("Contact.address"),
+        'created_at' => time(),
+        'updated_at' => time()
     ];
 
     $model->bind($data);
 
-    if ($model->validate()) {
-        //$model->save();
-    }
+    $model->save();
 
-    $view->data = ['model' => $model];
-
-    $this->setResponse($view);
+    $this->setResponse(['errors' => $model->getAllErrors()]);
 });
