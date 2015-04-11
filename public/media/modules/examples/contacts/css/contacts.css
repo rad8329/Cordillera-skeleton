@@ -67,11 +67,13 @@ ul.c-controls li {
     float: left;
 }
 
-ul.c-controls li a {
+ul.c-controls li a,ul.c-controls li span {
     font-size: 1.7em;
     padding: 11px 10px 6px;
 }
-
+ ul.c-controls li span{
+    color: #337ab7;
+ }
 ul.c-controls li a i {
     min-width: 24px;
     text-align: center;

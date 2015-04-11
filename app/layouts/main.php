@@ -18,10 +18,15 @@ use \cordillera\helpers\Url;
           href="<?php echo Application::getRequest()->base_url ?>/media/css/normalize.css">
     <link rel="stylesheet" type="text/css"
           href="<?php echo Application::getRequest()->base_url ?>/media/css/cordillera.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo Application::getRequest()->base_url ?>/media/css/custom.css">
+    <link rel="stylesheet" type="text/css"
+          href="<?php echo Application::getRequest()->base_url ?>/media/css/custom.css">
     <script src="//code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="<?php echo Application::getRequest()->base_url ?>/media/js/cordillera.js" type="text/javascript"></script>
+    <script src="<?php echo Application::getRequest()->base_url ?>/media/js/cordillera.js"
+            type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-flash.css"
+          rel="stylesheet"/>
     <?php echo $this->publishRegisteredFiles() ?>
 </head>
 <body>
@@ -42,7 +47,8 @@ use \cordillera\helpers\Url;
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li id="link_1">
-                    <a href="<?php echo cordillera\helpers\Url::relative("examples/routes/index") ?>">Google MAPS API</a>
+                    <a href="<?php echo cordillera\helpers\Url::relative("examples/routes/index") ?>">Google MAPS
+                        API</a>
                 </li>
                 <li id="link_2">
                     <a href="<?php echo Url::relative("examples/contacts/index") ?>">

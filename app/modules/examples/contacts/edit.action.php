@@ -10,7 +10,7 @@ use modules\examples\contacts\models\Contact;
 /** @var Controller $this */
 /** @var Contact $model */
 
-$model = new Contact();
+$model = Contact::findByPk($_GET['id']);
 
 $this->filters(function () {
 
@@ -18,7 +18,6 @@ $this->filters(function () {
 
     $this->assertAjax();
 });
-
 
 $this->get(function () use ($model) {
 
@@ -41,7 +40,6 @@ $this->post(function () use ($model) {
         'phone' => Request::post("Contact.phone"),
         'address' => Request::post("Contact.address"),
         'gender' => Request::post("Contact.gender"),
-        'created_at' => time(),
         'updated_at' => time()
     ];
 
