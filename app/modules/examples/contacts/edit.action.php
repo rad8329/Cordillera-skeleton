@@ -7,10 +7,14 @@ use cordillera\middlewares\Request;
 use cordillera\middlewares\View;
 use modules\examples\contacts\models\Contact;
 
+/**
+ * @TODO: We must check if the current user is logged, but you can do it :)
+ */
+
 /** @var Controller $this */
 /** @var Contact $model */
 
-$model = Contact::findByPk($_GET['id']);
+$model = Contact::findByPk(Request::get("id"));
 
 $this->filters(function () {
 
@@ -32,6 +36,7 @@ $this->get(function () use ($model) {
 $this->post(function () use ($model) {
 
     /** @var Controller $this */
+    /** @var Contact $model */
 
     $data = [
         'firstname' => Request::post("Contact.firstname"),

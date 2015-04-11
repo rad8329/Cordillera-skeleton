@@ -7,6 +7,10 @@ use cordillera\middlewares\Request;
 use cordillera\middlewares\View;
 use modules\examples\contacts\models\Contact;
 
+/**
+ * @TODO: We must check if the current user is logged, but you can do it :)
+ */
+
 /** @var Controller $this */
 /** @var Contact $model */
 
@@ -23,6 +27,7 @@ $this->filters(function () {
 $this->get(function () use ($model) {
 
     /** @var Controller $this */
+    /** @var Contact $model */
 
     $view = new View("modules/examples/contacts/views/form", new Layout("main"));
     $view->data = ['model' => $model];
@@ -33,6 +38,7 @@ $this->get(function () use ($model) {
 $this->post(function () use ($model) {
 
     /** @var Controller $this */
+    /** @var Contact $model */
 
     $data = [
         'firstname' => Request::post("Contact.firstname"),

@@ -8,7 +8,6 @@ use modules\examples\contacts\models\Contact;
 
 /** @var Controller $this */
 
-
 $this->get(function () {
 
     /** @var Controller $this */

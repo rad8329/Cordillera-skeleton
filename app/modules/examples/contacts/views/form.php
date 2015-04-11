@@ -1,5 +1,4 @@
 <?php
-use cordillera\helpers\Url;
 use cordillera\base\Application;
 
 /** @var \cordillera\middlewares\View $this */
