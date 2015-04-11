@@ -1,7 +1,6 @@
 <?php
 namespace modules\examples\contacts;
 
-use cordillera\base\Application;
 use cordillera\middlewares\Controller;
 use cordillera\middlewares\Layout;
 use cordillera\middlewares\Request;
