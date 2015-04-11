@@ -45,7 +45,7 @@ var Contact = function () {
             compile: function (data) {
                 jQuery('#context-form-contact .has-error').removeClass();
                 jQuery("#context-form-contact .help-block").detach();
-                
+
                 if (Object.keys(data.errors).length > 0) {
                     jQuery.each(attributes, function (key, value) {
                         if (data.errors[value] != undefined && data.errors[value].length > 0) {
@@ -81,6 +81,20 @@ var Contact = function () {
                 $this.form.action = jQuery(this).attr("href");
                 $this.modal.load(jQuery(this).attr("href"));
             });
+
+            /**
+             * Edit contact handler
+             */
+            jQuery('a.delete-trigger').on('click', function (event) {
+                event.preventDefault();
+                var $url = jQuery(this).attr("href");
+                bootbox.confirm(jQuery(this).data("confirm-text"), function (result) {
+                    if (result) {
+                        location.href = $url;
+                    }
+                });
+            });
+
             /**
              * Add contact handler
              */

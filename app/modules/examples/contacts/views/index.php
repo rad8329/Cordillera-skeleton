@@ -59,13 +59,20 @@ $this->layout->registerCssFile(Application::getRequest()->base_url . "/media/mod
                                      class="img-responsive img-circle"/>
                             </div>
                             <div class="col-xs-12 col-sm-9">
-                                <div class="pull-right">
-                                    <a data-modal-title="<?php echo translate("Edit a contact") ?>" class="edit-trigger"
-                                       href="<?php echo Url::relative("examples/contacts/edit", ['id' => $contact->id]) ?>"><i
-                                            class="fa fa-pencil-square"></i></a>
-                                    <a href="<?php echo Url::relative("examples/contacts/delete", ['id' => $contact->id]) ?>"><i
-                                            class="fa fa-trash"></i></a>
-                                </div>
+                                <?php if (Application::getAuth()->id): ?>
+                                    <div class="pull-right">
+                                        <a data-toggle="tooltip" title="<?php echo translate("Edit contact") ?>"
+                                           data-modal-title="<?php echo translate("Edit a contact") ?>"
+                                           class="edit-trigger"
+                                           href="<?php echo Url::relative("examples/contacts/edit", ['id' => $contact->id]) ?>"><i
+                                                class="fa fa-pencil-square"></i></a>
+                                        <a data-toggle="tooltip" title="<?php echo translate("Delete contact") ?>"
+                                           data-confirm-text="<?php echo translate("Are you sure to delete this record?") ?>"
+                                           class="delete-trigger"
+                                           href="<?php echo Url::relative("examples/contacts/delete", ['id' => $contact->id]) ?>"><i
+                                                class="fa fa-trash"></i></a>
+                                    </div>
+                                <?php endif; ?>
                                 <span class="name"><?php echo $contact->fullName() ?></span><br/>
                                 <?php if ($contact->address): ?>
                                     <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip"

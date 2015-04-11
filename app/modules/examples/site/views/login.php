@@ -56,6 +56,14 @@ $loginForm = $model->fieldName("LoginForm");
                         value="login"><?php echo Application::getLang()->translate('Login') ?></button>
             </div>
         </div>
+        <div class="bs-docs-section">
+            <div class="bs-callout bs-callout-info">
+                <h4>Example data</h4>
+
+                <p>For login use <code>rdiaz/rdiaz</code> or <code>admin/admin</code></p>
+            </div>
+        </div>
+
     </form>
 </div>
 <script type="text/javascript">
