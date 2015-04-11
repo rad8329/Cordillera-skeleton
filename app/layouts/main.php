@@ -49,8 +49,7 @@ use \cordillera\helpers\Url;
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li id="link_1">
-                    <a href="<?php echo cordillera\helpers\Url::relative("examples/routes/index") ?>">Google MAPS
-                        API</a>
+                    <a href="<?php echo cordillera\helpers\Url::relative("examples/routes/index") ?>">Medellín bus routes</a>
                 </li>
                 <li id="link_2">
                     <a href="<?php echo Url::relative("examples/contacts/index") ?>">

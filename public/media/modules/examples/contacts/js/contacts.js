@@ -72,6 +72,7 @@ var Contact = function () {
             jQuery("#link_2").addClass("active"); //Active link
 
             jQuery('[data-toggle="tooltip"]').tooltip();
+
             /**
              * Edit contact handler
              */
@@ -83,7 +84,7 @@ var Contact = function () {
             });
 
             /**
-             * Edit contact handler
+             * Delete contact handler
              */
             jQuery('a.delete-trigger').on('click', function (event) {
                 event.preventDefault();
@@ -104,6 +105,7 @@ var Contact = function () {
                 $this.form.action = jQuery(this).data("context-handler");
                 $this.modal.load(jQuery(this).data("context-handler"));
             });
+
             /**
              * Toggle search input
              */
@@ -117,8 +119,9 @@ var Contact = function () {
                     jQuery('.c-search').closest('.row').slideDown(100);
                 }
             });
+
             /**
-             * Searh handler
+             * Search handler
              */
             jQuery('#contact-list').searchable({
                 searchField: '#contact-list-search',
