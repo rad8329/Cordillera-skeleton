@@ -10,10 +10,6 @@
     color: white;
 }
 
-.pac-container:after {
-    background: none !important;
-}
-
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 }

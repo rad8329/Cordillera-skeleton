@@ -12,7 +12,7 @@ $this->layout->registerJsFile("//rawgithub.com/stidges/jquery-searchable/master/
 $this->layout->registerJsFile(Application::getRequest()->base_url . "/media/modules/examples/contacts/js/contacts.js");
 $this->layout->registerCssFile(Application::getRequest()->base_url . "/media/modules/examples/contacts/css/contacts.css");
 ?>
-<div class="container">
+<div class="container" id="contacts-module">
     <div class="row">
         <div class="col-xs-12">
             <div class="panel panel-default">
@@ -66,7 +66,7 @@ $this->layout->registerCssFile(Application::getRequest()->base_url . "/media/mod
                                            class="edit-trigger"
                                            href="<?php echo Url::relative("examples/contacts/edit", ['id' => $contact->id]) ?>"><i
                                                 class="fa fa-pencil-square"></i></a>
-                                        <a data-toggle="tooltip" title="<?php echo translate("Delete contact") ?>"
+                                        <a data-toggle="confirmation" title="<?php echo translate("Are you sure to delete this record?") ?>"
                                            data-confirm-text="<?php echo translate("Are you sure to delete this record?") ?>"
                                            class="delete-trigger"
                                            href="<?php echo Url::relative("examples/contacts/delete", ['id' => $contact->id]) ?>"><i

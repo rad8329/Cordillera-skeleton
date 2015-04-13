@@ -9,3 +9,7 @@ body.error .trace {
     border: 1px solid #ebccd1;
     border-radius: 4px;
 }
+
+.confirmation {
+    min-width: 12em;
+}

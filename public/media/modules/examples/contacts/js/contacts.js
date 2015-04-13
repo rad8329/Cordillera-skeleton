@@ -65,6 +65,7 @@ var Contact = function () {
             }
         },
         init: function () {
+
             this.modal.parent = this;
             this.form.parent = this;
 
@@ -82,20 +83,7 @@ var Contact = function () {
                 $this.form.action = jQuery(this).attr("href");
                 $this.modal.load(jQuery(this).attr("href"));
             });
-
-            /**
-             * Delete contact handler
-             */
-            jQuery('a.delete-trigger').on('click', function (event) {
-                event.preventDefault();
-                var $url = jQuery(this).attr("href");
-                bootbox.confirm(jQuery(this).data("confirm-text"), function (result) {
-                    if (result) {
-                        location.href = $url;
-                    }
-                });
-            });
-
+            
             /**
              * Add contact handler
              */
