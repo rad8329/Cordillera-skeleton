@@ -67,4 +67,4 @@ var Marker = function () {
             this.draw(id);
         }
     }
-};
+}();

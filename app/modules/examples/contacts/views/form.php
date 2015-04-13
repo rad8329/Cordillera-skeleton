@@ -7,21 +7,17 @@ use cordillera\base\Application;
 
 $contactForm = $model->fieldName("Contact");
 ?>
-<form id="context-form-contact" class="form-horizontal" method="post" onsubmit="return contact.form.submit(this);">
+<form id="context-form-contact" class="form-horizontal" method="post" onsubmit="return Contact.form.submit(this);">
     <input type="hidden" name="<?php echo $model->fieldName(Application::getRequest()->csrf_id) ?>"
            value="<?php echo Application::getRequest()->csrf_value ?>">
-
     <div id="field-gender" class="clearfix required">
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
-                <select class="form-control"
-                        name="<?php echo $contactForm . "[" . $model->fieldName("gender") . "]" ?>">
-                    <option
-                        value="<?php echo translate("female") ?>" <?php echo $model->gender == 'female' ? 'selected' : '' ?>>
+                <select class="form-control" name="<?php echo $contactForm . "[" . $model->fieldName("gender") . "]" ?>">
+                    <option value="<?php echo translate("female") ?>" <?php echo $model->gender == 'female' ? 'selected' : '' ?>>
                         <?php echo translate("Female") ?>
                     </option>
-                    <option
-                        value="<?php echo translate("male") ?>" <?php echo $model->gender == 'male' ? 'selected' : '' ?>>
+                    <option value="<?php echo translate("male") ?>" <?php echo $model->gender == 'male' ? 'selected' : '' ?>>
                         <?php echo translate("Male") ?>
                     </option>
                 </select>
@@ -79,7 +75,8 @@ $contactForm = $model->fieldName("Contact");
         <div class="col-xs-4">
             <button type="submit" class="btn btn-primary btn-block btn-flat"
                     name="<?php echo $model->fieldName("save-button") ?>"
-                    value="login"><?php echo translate('Save') ?></button>
+                    value="login"><?php echo translate('Save') ?>
+            </button>
         </div>
     </div>
 </form>

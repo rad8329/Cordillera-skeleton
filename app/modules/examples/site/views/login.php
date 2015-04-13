@@ -13,8 +13,7 @@ $loginForm = $model->fieldName("LoginForm");
         <input type="hidden" name="<?php echo $model->fieldName(Application::getRequest()->csrf_id) ?>"
                value="<?php echo Application::getRequest()->csrf_value ?>">
 
-        <div
-            class="clearfix field-loginform-username required <?php echo $model->hasError('username') ? 'has-error' : '' ?>">
+        <div class="clearfix field-loginform-username required <?php echo $model->hasError('username') ? 'has-error' : '' ?>">
             <div class="form-group has-feedback clearfix">
                 <input type="text" id="loginform-username" class="form-control"
                        name="<?php echo $loginForm . "[" . $model->fieldName("username") . "]" ?>"
@@ -30,8 +29,7 @@ $loginForm = $model->fieldName("LoginForm");
                 </div>
             <?php endif ?>
         </div>
-        <div
-            class="clearfix field-loginform-password required <?php echo $model->hasError('password') ? 'has-error' : '' ?>">
+        <div class="clearfix field-loginform-password required <?php echo $model->hasError('password') ? 'has-error' : '' ?>">
             <div class="form-group has-feedback clearfix">
                 <input type="password" id="loginform-password" class="form-control"
                        name="<?php echo $loginForm . "[" . $model->fieldName("password") . "]" ?>"
@@ -53,7 +51,8 @@ $loginForm = $model->fieldName("LoginForm");
             <div class="col-xs-4">
                 <button type="submit" class="btn btn-primary btn-block btn-flat"
                         name="<?php echo $model->fieldName("login-button") ?>"
-                        value="login"><?php echo Application::getLang()->translate('Login') ?></button>
+                        value="login"><?php echo Application::getLang()->translate('Login') ?>
+                </button>
             </div>
         </div>
         <div class="bs-docs-section">
@@ -63,7 +62,6 @@ $loginForm = $model->fieldName("LoginForm");
                 <p>For login use <code>rdiaz/rdiaz</code> or <code>admin/admin</code></p>
             </div>
         </div>
-
     </form>
 </div>
 <script type="text/javascript">

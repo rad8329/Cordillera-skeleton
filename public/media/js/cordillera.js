@@ -4,6 +4,12 @@ if (typeof jQuery === "undefined") {
     throw new Error("Cordillera needs jQuery");
 }
 
-jQuery(document).ready(function () {
-    jQuery('[data-toggle=confirmation]').confirmation();
-});
+var Cordilelra = function () {
+    return {
+        init: function () {
+            jQuery('[data-toggle=confirmation]').confirmation();
+        }
+    }
+}();
+
+Cordilelra.init();

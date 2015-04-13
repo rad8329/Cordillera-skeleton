@@ -45,10 +45,9 @@ $this->layout->registerCssFile(Application::getRequest()->base_url . "/media/mod
     <div id="map"></div>
 </div>
 <script type="text/javascript">
-    var marker = new Marker();
-    //marker.sourceUrl = '<?php echo Url::relative("examples/routes/get")?>'; // If request method is POST
-    marker.sourceUrl = '<?php echo Url::relative("examples/routes/get",['id'=>$id])?>';// If request method is GET
-    marker.csrf_id = '<?php echo Crypt::requestVar(Application::getRequest()->csrf_id);?>';// If request method is POST
-    marker.csrf_value = '<?php echo Application::getRequest()->csrf_value;?>';// If request method is POST
-    marker.init(<?php echo (int)$id;?>);
+    //Marker.sourceUrl = '<?php echo Url::relative("examples/routes/get")?>'; // If request method is POST
+    Marker.sourceUrl = '<?php echo Url::relative("examples/routes/get",['id'=>$id])?>';// If request method is GET
+    Marker.csrf_id = '<?php echo Crypt::requestVar(Application::getRequest()->csrf_id);?>';// If request method is POST
+    Marker.csrf_value = '<?php echo Application::getRequest()->csrf_value;?>';// If request method is POST
+    Marker.init(<?php echo (int)$id;?>);
 </script>

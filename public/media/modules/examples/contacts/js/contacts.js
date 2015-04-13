@@ -83,7 +83,7 @@ var Contact = function () {
                 $this.form.action = jQuery(this).attr("href");
                 $this.modal.load(jQuery(this).attr("href"));
             });
-            
+
             /**
              * Add contact handler
              */
@@ -124,4 +124,4 @@ var Contact = function () {
             });
         }
     }
-};
+}();
