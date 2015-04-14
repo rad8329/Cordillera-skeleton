@@ -4,13 +4,13 @@ use cordillera\helpers\Url;
 use cordillera\middlewares\View;
 use modules\examples\contacts\models\Contact;
 
-/** @var View $this */
-/** @var Contact[] $contacts */
-/** @var int $total */
+/* @var View $this */
+/* @var Contact[] $contacts */
+/* @var int $total */
 
-$this->layout->registerJsFile("//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js");
-$this->layout->registerJsFile(Application::getRequest()->base_url . "/media/modules/examples/contacts/js/contacts.js");
-$this->layout->registerCssFile(Application::getRequest()->base_url . "/media/modules/examples/contacts/css/contacts.css");
+$this->layout->registerJsFile('//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js');
+$this->layout->registerJsFile(Application::getRequest()->base_url.'/media/modules/examples/contacts/js/contacts.js');
+$this->layout->registerCssFile(Application::getRequest()->base_url.'/media/modules/examples/contacts/css/contacts.css');
 ?>
 <div class="container" id="contacts-module">
     <div class="row">
@@ -30,8 +30,8 @@ $this->layout->registerCssFile(Application::getRequest()->base_url . "/media/mod
                             <?php else: ?>
                                 <li>
                                     <a href="#form-contact" data-toggle="tooltip" data-placement="top"
-                                       data-context-handler="<?php echo Url::relative("examples/contacts/add") ?>"
-                                       data-modal-title="<?php echo translate("Add a contact") ?>"
+                                       data-context-handler="<?php echo Url::relative('examples/contacts/add') ?>"
+                                       data-modal-title="<?php echo translate('Add a contact') ?>"
                                        title="<?php echo Application::getLang()->translate('Add Contact') ?>">
                                         <i class="glyphicon glyphicon-plus"></i>
                                     </a>
@@ -69,16 +69,16 @@ $this->layout->registerCssFile(Application::getRequest()->base_url . "/media/mod
                             <div class="col-xs-12 col-sm-9">
                                 <?php if (Application::getAuth()->id): ?>
                                     <div class="pull-right">
-                                        <a data-toggle="tooltip" title="<?php echo translate("Edit contact") ?>"
-                                           data-modal-title="<?php echo translate("Edit a contact") ?>"
+                                        <a data-toggle="tooltip" title="<?php echo translate('Edit contact') ?>"
+                                           data-modal-title="<?php echo translate('Edit a contact') ?>"
                                            class="edit-trigger"
-                                           href="<?php echo Url::relative("examples/contacts/edit", ['id' => $contact->id]) ?>">
+                                           href="<?php echo Url::relative('examples/contacts/edit', ['id' => $contact->id]) ?>">
                                             <i class="fa fa-pencil-square"></i>
                                         </a>
                                         <a data-toggle="confirmation"
-                                           title="<?php echo translate("Are you sure to delete this record?") ?>"
+                                           title="<?php echo translate('Are you sure to delete this record?') ?>"
                                            class="delete-trigger"
-                                           href="<?php echo Url::relative("examples/contacts/delete", ['id' => $contact->id]) ?>">
+                                           href="<?php echo Url::relative('examples/contacts/delete', ['id' => $contact->id]) ?>">
                                             <i class="fa fa-trash"></i>
                                         </a>
                                     </div>

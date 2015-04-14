@@ -1,18 +1,18 @@
 <?php
+
 namespace modules\examples\routes;
 
 use cordillera\middlewares\Controller;
 use cordillera\middlewares\Layout;
 use cordillera\middlewares\View;
 
-/** @var Controller $this */
-
+/* @var Controller $this */
 
 $this->get(function () {
 
-    /** @var Controller $this */
+    /* @var Controller $this */
 
-    $view = new View("modules/examples/site/views/welcome", new Layout("main"));
+    $view = new View('modules/examples/site/views/welcome', new Layout('main'));
 
     $this->setResponse($view);
 });

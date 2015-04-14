@@ -1,4 +1,5 @@
 <?php
+
 return [
     ['/home', 'examples/site/index'],
     ['/login', 'examples/site/login'],
@@ -8,5 +9,5 @@ return [
     ['/contacts', 'examples/contacts/index'],
     ['/add-contact', 'examples/contacts/add'],
     ['/edit-contact/[i:id]?', 'examples/contacts/edit'],
-    ['/delete-contact/[i:id]?', 'examples/contacts/delete']
+    ['/delete-contact/[i:id]?', 'examples/contacts/delete'],
 ];

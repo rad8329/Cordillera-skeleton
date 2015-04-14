@@ -1,10 +1,12 @@
 <?php
+
 namespace modules\examples\routes\helpers;
 
 class Geom
 {
     /**
      * @param string $line The linestring geometry data as string
+     *
      * @return array
      */
     public static function getLineAsArray($line)
@@ -23,6 +25,7 @@ class Geom
 
     /**
      * @param string $point The point geometry data as string
+     *
      * @return array
      */
     public static function getPonintAsArray($point)

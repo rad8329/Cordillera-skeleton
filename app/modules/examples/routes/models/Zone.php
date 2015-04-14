@@ -1,4 +1,5 @@
 <?php
+
 namespace modules\examples\routes\models;
 
 use cordillera\middlewares\db\ActiveRecord;

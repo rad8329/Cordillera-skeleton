@@ -1,4 +1,6 @@
-<?php /** @var \cordillera\middlewares\View $this */ ?>
+<?php
+/** @var \cordillera\middlewares\View $this */
+?>
 <div class="container">
     <div class="jumbotron">
         <h1>Welcome</h1>

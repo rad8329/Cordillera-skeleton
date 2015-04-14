@@ -10,24 +10,24 @@ return [
     ],
     'session' => [
         'key' => 'wZ32o92Xr9tXNVmF4gSP',
-        'path' => CORDILLERA_APP_DIR . 'tmp' . DS,
+        'path' => CORDILLERA_APP_DIR.'tmp'.DS,
         'lifetime' => 30, //Minutes
         'cookie' => [
             'lifetime' => 0,
             'path' => '/',
             //'domain' => 'cordilleralabs.com',
             'secure' => isset($_SERVER['HTTPS']),
-            'httponly' => true
-        ]
+            'httponly' => true,
+        ],
     ],
     'request' => [
-        'csrf' => true
+        'csrf' => true,
     ],
     'response' => [
-        'default' => 'examples/site/index'
+        'default' => 'examples/site/index',
     ],
     'router' => [
         'show_index_file' => false,
-        'rules' => require CORDILLERA_APP_DIR . 'config' . DS . 'routers.php'
-    ]
+        'rules' => require CORDILLERA_APP_DIR.'config'.DS.'routers.php',
+    ],
 ];

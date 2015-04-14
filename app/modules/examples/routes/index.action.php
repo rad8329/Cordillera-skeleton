@@ -1,4 +1,5 @@
 <?php
+
 namespace modules\examples\routes;
 
 use cordillera\middlewares\Controller;
@@ -7,24 +8,23 @@ use modules\examples\routes\models\Zone;
 use cordillera\middlewares\Request;
 use cordillera\middlewares\View;
 
-/** @var Controller $this */
+/* @var Controller $this */
 
 $this->get(function () {
 
-    /** @var Controller $this */
-    $id = Request::get("id", 1);
+    /* @var Controller $this */
+    $id = Request::get('id', 1);
 
     $view = new View(
-        "modules/examples/routes/views/index",
-        new Layout("main"),
+        'modules/examples/routes/views/index',
+        new Layout('main'),
         [
             'zones' => Zone::findAll(),
-            'id' => $id
+            'id' => $id,
         ]
     );
 
-    $view->layout->properties["title"] = "Medellín bus routes";
+    $view->layout->properties['title'] = 'Medellín bus routes';
 
     $this->setResponse($view);
 });
-

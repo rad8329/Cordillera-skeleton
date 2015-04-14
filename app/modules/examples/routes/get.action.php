@@ -1,14 +1,15 @@
 <?php
+
 namespace modules\examples\routes;
 
 use cordillera\middlewares\Controller;
 use modules\examples\routes\models\Route;
 use cordillera\middlewares\Request;
 
-/** @var Controller $this */
+/* @var Controller $this */
 
 $this->filters(function () {
-    /** @var Controller $this */
+    /* @var Controller $this */
 
     $this->assertAjax();
     $this->assertJsonContentType();
@@ -16,7 +17,7 @@ $this->filters(function () {
 
 $this->get(function () {
 
-    /** @var Controller $this */
+    /* @var Controller $this */
 
     //$route = Route::findByPk(Request::payload('id')); // If request method is POST and Payload
 

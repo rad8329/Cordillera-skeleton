@@ -1,4 +1,5 @@
 <?php
+
 namespace modules\examples\routes\models;
 
 use modules\examples\routes\helpers\Geom;
@@ -28,6 +29,7 @@ class Route extends ActiveRecord
 
     /**
      * @param int $id
+     *
      * @return \modules\examples\routes\models\Route
      */
     public static function findByPk($id)
@@ -38,7 +40,7 @@ class Route extends ActiveRecord
         return self::find([
             'condition' => 'T.id = :id',
             'select' => $sql,
-            'params' => [':id' => $id]
+            'params' => [':id' => $id],
         ]);
     }
 }

@@ -1,11 +1,10 @@
 <?php
 use cordillera\base\Application;
 
-/** @var \cordillera\middlewares\View $this */
-/** @var \modules\examples\contacts\models\Contact $model */
+/* @var \cordillera\middlewares\View $this */
+/* @var \modules\examples\contacts\models\Contact $model */
 /** @var string $contactForm */
-
-$contactForm = $model->fieldName("Contact");
+$contactForm = $model->fieldName('Contact');
 ?>
 <form id="context-form-contact" class="form-horizontal" method="post" onsubmit="return Contact.form.submit(this);">
     <input type="hidden" name="<?php echo $model->fieldName(Application::getRequest()->csrf_id) ?>"
@@ -13,12 +12,12 @@ $contactForm = $model->fieldName("Contact");
     <div id="field-gender" class="clearfix required">
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
-                <select class="form-control" name="<?php echo $contactForm . "[" . $model->fieldName("gender") . "]" ?>">
-                    <option value="<?php echo translate("female") ?>" <?php echo $model->gender == 'female' ? 'selected' : '' ?>>
-                        <?php echo translate("Female") ?>
+                <select class="form-control" name="<?php echo $contactForm.'['.$model->fieldName('gender').']' ?>">
+                    <option value="<?php echo translate('female') ?>" <?php echo $model->gender == 'female' ? 'selected' : '' ?>>
+                        <?php echo translate('Female') ?>
                     </option>
-                    <option value="<?php echo translate("male") ?>" <?php echo $model->gender == 'male' ? 'selected' : '' ?>>
-                        <?php echo translate("Male") ?>
+                    <option value="<?php echo translate('male') ?>" <?php echo $model->gender == 'male' ? 'selected' : '' ?>>
+                        <?php echo translate('Male') ?>
                     </option>
                 </select>
             </div>
@@ -28,8 +27,8 @@ $contactForm = $model->fieldName("Contact");
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
                 <input class="form-control" type="text"
-                       name="<?php echo $contactForm . "[" . $model->fieldName("firstname") . "]" ?>"
-                       placeholder="<?php echo translate("First name") ?>" value="<?php echo $model->firstname ?>">
+                       name="<?php echo $contactForm.'['.$model->fieldName('firstname').']' ?>"
+                       placeholder="<?php echo translate('First name') ?>" value="<?php echo $model->firstname ?>">
             </div>
         </div>
     </div>
@@ -37,8 +36,8 @@ $contactForm = $model->fieldName("Contact");
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
                 <input class="form-control" type="text"
-                       name="<?php echo $contactForm . "[" . $model->fieldName("lastname") . "]" ?>"
-                       placeholder="<?php echo translate("Last name") ?>" value="<?php echo $model->lastname ?>">
+                       name="<?php echo $contactForm.'['.$model->fieldName('lastname').']' ?>"
+                       placeholder="<?php echo translate('Last name') ?>" value="<?php echo $model->lastname ?>">
             </div>
         </div>
     </div>
@@ -46,8 +45,8 @@ $contactForm = $model->fieldName("Contact");
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
                 <input class="form-control" type="text"
-                       name="<?php echo $contactForm . "[" . $model->fieldName("email") . "]" ?>"
-                       placeholder="<?php echo translate("Email") ?>" value="<?php echo $model->email ?>">
+                       name="<?php echo $contactForm.'['.$model->fieldName('email').']' ?>"
+                       placeholder="<?php echo translate('Email') ?>" value="<?php echo $model->email ?>">
             </div>
         </div>
     </div>
@@ -55,8 +54,8 @@ $contactForm = $model->fieldName("Contact");
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
                 <input class="form-control" type="text"
-                       name="<?php echo $contactForm . "[" . $model->fieldName("address") . "]" ?>"
-                       placeholder="<?php echo translate("Address") ?>" value="<?php echo $model->address ?>">
+                       name="<?php echo $contactForm.'['.$model->fieldName('address').']' ?>"
+                       placeholder="<?php echo translate('Address') ?>" value="<?php echo $model->address ?>">
             </div>
         </div>
     </div>
@@ -64,8 +63,8 @@ $contactForm = $model->fieldName("Contact");
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
                 <input class="form-control" type="text"
-                       name="<?php echo $contactForm . "[" . $model->fieldName("phone") . "]" ?>"
-                       placeholder="<?php echo translate("Phone") ?>" value="<?php echo $model->phone ?>">
+                       name="<?php echo $contactForm.'['.$model->fieldName('phone').']' ?>"
+                       placeholder="<?php echo translate('Phone') ?>" value="<?php echo $model->phone ?>">
             </div>
         </div>
     </div>
@@ -74,7 +73,7 @@ $contactForm = $model->fieldName("Contact");
         </div>
         <div class="col-xs-4">
             <button type="submit" class="btn btn-primary btn-block btn-flat"
-                    name="<?php echo $model->fieldName("save-button") ?>"
+                    name="<?php echo $model->fieldName('save-button') ?>"
                     value="login"><?php echo translate('Save') ?>
             </button>
         </div>

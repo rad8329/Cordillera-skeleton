@@ -12,6 +12,7 @@ var Marker = function () {
         csrf_id: '',
         csrf_value: '',
         draw: function (id) {
+            var $this = this;
             var payload = {id: id};
             payload[this.csrf_id] = this.csrf_value; //CSRF Token if POST method
             jQuery.ajax({
@@ -19,7 +20,7 @@ var Marker = function () {
                 dataType: 'json',
                 contentType: 'application/json',
                 //data: JSON.stringify(payload), //CSRF Token if POST method
-                url: this.sourceUrl, success: function (result) {
+                url: $this.sourceUrl, success: function (result) {
                     if (result.id) {
                         var route = [];
 
