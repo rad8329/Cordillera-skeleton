@@ -13,7 +13,8 @@ use modules\examples\contacts\models\Contact;
  */
 
 /* @var Controller $this */
-/** @var Contact $model */
+/* @var Contact $model */
+
 $model = new Contact();
 
 $this->filters(function () {
@@ -28,8 +29,11 @@ $this->get(function () use ($model) {
     /* @var Controller $this */
     /* @var Contact $model */
 
-    $view = new View('modules/examples/contacts/views/form', new Layout('main'));
-    $view->data = ['model' => $model];
+    $view = new View(
+        'modules/examples/contacts/views/form',
+        new Layout('main'),
+        ['model' => $model]
+    );
 
     $this->setResponse($view);
 });

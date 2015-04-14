@@ -3,7 +3,8 @@ use cordillera\base\Application;
 
 /* @var \cordillera\middlewares\View $this */
 /* @var \modules\examples\contacts\models\Contact $model */
-/** @var string $contactForm */
+/* @var string $contactForm */
+
 $contactForm = $model->fieldName('Contact');
 ?>
 <form id="context-form-contact" class="form-horizontal" method="post" onsubmit="return Contact.form.submit(this);">

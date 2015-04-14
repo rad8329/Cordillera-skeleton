@@ -1,5 +1,5 @@
 <?php
-/** @var \cordillera\middlewares\View $this */
+/* @var \cordillera\middlewares\View $this */
 ?>
 <div class="container">
     <div class="jumbotron">

@@ -3,7 +3,7 @@ use cordillera\base\Application;
 use cordillera\helpers\Url;
 
 /* @var \modules\examples\site\models\LoginForm $model */
-/** @var string $loginForm */
+/* @var string $loginForm */
 /* @var \cordillera\middlewares\View $this */
 
 $loginForm = $model->fieldName('LoginForm');

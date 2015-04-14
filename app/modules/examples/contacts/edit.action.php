@@ -13,7 +13,8 @@ use modules\examples\contacts\models\Contact;
  */
 
 /* @var Controller $this */
-/** @var Contact $model */
+/* @var Contact $model */
+
 $model = Contact::findByPk(Request::get('id'));
 
 $this->filters(function () {
