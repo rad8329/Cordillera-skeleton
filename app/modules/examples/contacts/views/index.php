@@ -9,8 +9,8 @@ use modules\examples\contacts\models\Contact;
 /* @var int $total */
 
 $this->layout->registerJsFile('//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js');
-$this->layout->registerJsFile(Application::getRequest()->base_url.'/media/modules/examples/contacts/js/contacts.js');
-$this->layout->registerCssFile(Application::getRequest()->base_url.'/media/modules/examples/contacts/css/contacts.css');
+$this->layout->registerJsFile(Application::getRequest()->base_url . '/media/modules/examples/contacts/js/contacts.js');
+$this->layout->registerCssFile(Application::getRequest()->base_url . '/media/modules/examples/contacts/css/contacts.css');
 ?>
 <div class="container" id="contacts-module">
     <div class="row">
@@ -33,7 +33,7 @@ $this->layout->registerCssFile(Application::getRequest()->base_url.'/media/modul
                                        data-context-handler="<?php echo Url::relative('examples/contacts/add') ?>"
                                        data-modal-title="<?php echo translate('Add a contact') ?>"
                                        title="<?php echo Application::getLang()->translate('Add Contact') ?>">
-                                        <i class="glyphicon glyphicon-plus"></i>
+                                        <i class="fa fa-plus"></i>
                                     </a>
                                 </li>
                             <?php endif; ?>
@@ -68,33 +68,40 @@ $this->layout->registerCssFile(Application::getRequest()->base_url.'/media/modul
                             </div>
                             <div class="col-xs-12 col-sm-9">
                                 <?php if (Application::getAuth()->id): ?>
-                                    <div class="pull-right">
+                                    <div class="pull-right options">
                                         <a data-toggle="tooltip" title="<?php echo translate('Edit contact') ?>"
                                            data-modal-title="<?php echo translate('Edit a contact') ?>"
                                            class="edit-trigger"
                                            href="<?php echo Url::relative('examples/contacts/edit', ['id' => $contact->id]) ?>">
-                                            <i class="fa fa-pencil-square"></i>
-                                        </a>
+                                            <i class="fa fa-pencil-square"></i></a>
                                         <a data-toggle="confirmation"
                                            title="<?php echo translate('Are you sure to delete this record?') ?>"
                                            class="delete-trigger"
                                            href="<?php echo Url::relative('examples/contacts/delete', ['id' => $contact->id]) ?>">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
+                                            <i class="fa fa-trash"></i></a>
                                     </div>
                                 <?php endif; ?>
-                                <span class="name"><?php echo $contact->fullName() ?></span><br/>
+                                <div>
+                                    <span class="name"><?php echo $contact->fullName() ?></span>
+                                </div>
                                 <?php if ($contact->address): ?>
-                                    <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip"
-                                          title="<?php echo $contact->address ?>"></span>
-                                    <span class="text-muted"><?php echo $contact->address ?></span><br/>
+                                    <div class="clearfix">
+                                    <span class="fa fa-map-marker text-muted c-info"
+                                          data-toggle="tooltip"
+                                          title="<?php echo $contact->address ?>"></span><span
+                                            class="text-muted"><?php echo $contact->address ?></span>
+                                    </div>
                                 <?php endif; ?>
-                                <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip"
-                                      title="<?php echo $contact->phone ?>"></span>
-                                <span class="text-muted"><?php echo $contact->phone ?></span><br/>
-                                <span class="fa fa-comments text-muted c-info" data-toggle="tooltip"
-                                      title="<?php echo $contact->email ?>"></span>
-                                <span class="text-muted"><?php echo $contact->email ?></span><br/>
+                                <div class="clearfix">
+                                    <span class="fa fa-phone text-muted c-info" data-toggle="tooltip"
+                                          title="<?php echo $contact->phone ?>"></span><span
+                                        class="text-muted"><?php echo $contact->phone ?></span>
+                                </div>
+                                <div class="clearfix">
+                                    <span class="fa fa-comments text-muted c-info" data-toggle="tooltip"
+                                          title="<?php echo $contact->email ?>"></span><span
+                                        class="text-muted"><?php echo $contact->email ?></span>
+                                </div>
                             </div>
                             <div class="clearfix"></div>
                         </li>
