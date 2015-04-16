@@ -18,7 +18,9 @@ use modules\examples\contacts\models\Contact;
 
 $model = Contact::findByPk(Request::get('id'));
 
-if (!$model) {
+if ($model) {
+    $model->delete();
+} else {
     throw new Exception(Application::getLang()->translate('Record was not found'), 404, Exception::NOTFOUND);
 }
 

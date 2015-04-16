@@ -1,6 +1,6 @@
 'use strict';
 
-//Make sure jQuery has been loaded before app.js
+//Make sure jQuery has been loaded before this script
 if (typeof jQuery === "undefined") {
     throw new Error("Routes module needs jQuery");
 }
@@ -8,7 +8,7 @@ if (typeof jQuery === "undefined") {
 var Marker = function () {
     var map_context;
     return {
-        sourceUrl: '',
+        source_url: '',
         csrf_id: '',
         csrf_value: '',
         draw: function (id) {
@@ -20,7 +20,7 @@ var Marker = function () {
                 dataType: 'json',
                 contentType: 'application/json',
                 //data: JSON.stringify(payload), //CSRF Token if POST method
-                url: $this.sourceUrl, success: function (result) {
+                url: $this.source_url, success: function (result) {
                     if (result.id) {
                         var route = [];
 
