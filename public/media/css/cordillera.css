@@ -13,3 +13,7 @@ body.error .trace {
 .confirmation {
     min-width: 12em;
 }
+
+.log-info{
+    margin-top: 15px;
+}

@@ -30,4 +30,7 @@ return [
         'show_index_file' => true,
         'rules' => require CORDILLERA_APP_DIR.'config'.DS.'routers.php',
     ],
+    'exception' => [
+        'show_log_id' => true,
+    ],
 ];
