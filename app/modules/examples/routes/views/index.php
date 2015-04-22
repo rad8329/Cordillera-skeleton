@@ -12,8 +12,8 @@ use cordillera\helpers\Crypt;
 $this->layout->registerJsFile(
     '//maps.google.com/maps/api/js??key=AIzaSyC1TDjFx7XwbbG7tduhePPyvbSN6VXi9GY&sensor=false&libraries=places'
 );
-$this->layout->registerJsFile(Application::getRequest()->base_url.'/media/modules/examples/routes/js/marker.js');
-$this->layout->registerCssFile(Application::getRequest()->base_url.'/media/modules/examples/routes/css/marker.css');
+$this->layout->registerJsFile(Application::getRequest()->base_url.'media/modules/examples/routes/js/marker.js');
+$this->layout->registerCssFile(Application::getRequest()->base_url.'media/modules/examples/routes/css/marker.css');
 ?>
 <div class="row-offcanvas row-offcanvas-left">
     <div id="sidebar" class="sidebar-offcanvas">

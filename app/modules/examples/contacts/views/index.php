@@ -9,8 +9,8 @@ use modules\examples\contacts\models\Contact;
 /* @var int $total */
 
 $this->layout->registerJsFile('//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js');
-$this->layout->registerJsFile(Application::getRequest()->base_url.'/media/modules/examples/contacts/js/contacts.js');
-$this->layout->registerCssFile(Application::getRequest()->base_url.'/media/modules/examples/contacts/css/contacts.css');
+$this->layout->registerJsFile(Application::getRequest()->base_url.'media/modules/examples/contacts/js/contacts.js');
+$this->layout->registerCssFile(Application::getRequest()->base_url.'media/modules/examples/contacts/css/contacts.css');
 ?>
 <div class="container" id="contacts-module">
     <div class="row">

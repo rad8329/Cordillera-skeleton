@@ -6,7 +6,7 @@ return [
         // IP address instead hostname - Performance UP 100%
         'dsn' => 'mysql:host=127.0.0.1;port=3306;dbname=geom_dev;charset=utf8',
         'username' => 'root',
-        'password' => 'root',
+        'password' => '',
     ],
     'session' => [
         'key' => 'wZ32o92Xr9tXNVmF4gSP',
@@ -27,7 +27,7 @@ return [
         'default' => 'examples/site/index',
     ],
     'router' => [
-        'show_index_file' => false,
+        'show_index_file' => true,
         'rules' => require CORDILLERA_APP_DIR.'config'.DS.'routers.php',
     ],
     'exception' => [
