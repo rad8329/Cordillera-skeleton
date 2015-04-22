@@ -20,7 +20,9 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "rad8329/cordillera": "*",
+    "rad8329/cordillera": "*"
+  },
+  "require-dev": {
     "heroku/heroku-buildpack-php": "*"
   }
 }
