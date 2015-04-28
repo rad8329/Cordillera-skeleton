@@ -1,4 +1,5 @@
 <?php
+
 /* @var \cordillera\middlewares\View $this */
 ?>
 <div class="container">

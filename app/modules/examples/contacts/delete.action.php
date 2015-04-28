@@ -21,7 +21,7 @@ $model = Contact::findByPk(Request::get('id'));
 if ($model) {
     $model->delete();
 } else {
-    throw new Exception(Application::getLang()->translate('Record was not found'), 404, Exception::NOTFOUND);
+    throw new Exception(translate('Record was not found'), 404, Exception::NOTFOUND);
 }
 
 Application::getRequest()->redirect(Url::relative('examples/contacts/index'));

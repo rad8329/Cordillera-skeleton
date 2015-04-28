@@ -17,13 +17,13 @@ $this->layout->registerCssFile(Application::getRequest()->base_url.'media/module
         <div class="col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-heading c-list">
-                    <span class="title"><?php echo Application::getLang()->translate('Contacts') ?></span>
+                    <span class="title"><?php echo translate('Contacts') ?></span>
                     <ul class="pull-right c-controls">
                         <?php if (Application::getAuth()->id): ?>
                             <?php if ($total >= 20): ?>
                                 <li>
                                     <span data-toggle="tooltip"
-                                          title="<?php echo Application::getLang()->translate('Contacts limit (20)') ?>">
+                                          title="<?php echo translate('Contacts limit (20)') ?>">
                                         <i class="glyphicon glyphicon-exclamation-sign"></i>
                                     </span>
                                 </li>
@@ -32,7 +32,7 @@ $this->layout->registerCssFile(Application::getRequest()->base_url.'media/module
                                     <a href="#form-contact" data-toggle="tooltip" data-placement="top"
                                        data-context-handler="<?php echo Url::relative('examples/contacts/add') ?>"
                                        data-modal-title="<?php echo translate('Add a contact') ?>"
-                                       title="<?php echo Application::getLang()->translate('Add Contact') ?>">
+                                       title="<?php echo translate('Add Contact') ?>">
                                         <i class="fa fa-plus"></i>
                                     </a>
                                 </li>
@@ -41,7 +41,7 @@ $this->layout->registerCssFile(Application::getRequest()->base_url.'media/module
                         <li>
                             <a href="#" class="hide-search" data-command="toggle-search" data-toggle="tooltip"
                                data-placement="top"
-                               title="<?php echo Application::getLang()->translate('Toggle Search') ?>">
+                               title="<?php echo translate('Toggle Search') ?>">
                                 <i class="fa fa-ellipsis-v"></i>
                             </a>
                         </li>
@@ -118,7 +118,7 @@ $this->layout->registerCssFile(Application::getRequest()->base_url.'media/module
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h4 class="modal-title" id="modal-label">
-                            <?php echo Application::getLang()->translate('Add a contact') ?>
+                            <?php echo translate('Add a contact') ?>
                         </h4>
                     </div>
                     <div class="modal-body" id="form-contact-body">

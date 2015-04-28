@@ -4,16 +4,14 @@ use cordillera\base\Application;
 /* @var \cordillera\middlewares\View $this */
 /* @var \modules\examples\contacts\models\Contact $model */
 /* @var string $contactForm */
-
-$contactForm = $model->fieldName('Contact');
 ?>
 <form id="context-form-contact" class="form-horizontal" method="post" onsubmit="return Contact.form.submit(this);">
-    <input type="hidden" name="<?php echo $model->fieldName(Application::getRequest()->csrf_id) ?>"
+    <input type="hidden" name="<?php echo $model->field(Application::getRequest()->csrf_id) ?>"
            value="<?php echo Application::getRequest()->csrf_value ?>">
     <div id="field-gender" class="clearfix required">
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
-                <select class="form-control" name="<?php echo $contactForm.'['.$model->fieldName('gender').']' ?>">
+                <select class="form-control" name="<?php echo $model->field('gender') ?>">
                     <option value="<?php echo translate('female') ?>" <?php echo $model->gender == 'female' ? 'selected' : '' ?>>
                         <?php echo translate('Female') ?>
                     </option>
@@ -28,7 +26,7 @@ $contactForm = $model->fieldName('Contact');
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
                 <input class="form-control" type="text"
-                       name="<?php echo $contactForm.'['.$model->fieldName('firstname').']' ?>"
+                       name="<?php echo $model->field('firstname') ?>"
                        placeholder="<?php echo translate('First name') ?>" value="<?php echo $model->firstname ?>">
             </div>
         </div>
@@ -37,7 +35,7 @@ $contactForm = $model->fieldName('Contact');
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
                 <input class="form-control" type="text"
-                       name="<?php echo $contactForm.'['.$model->fieldName('lastname').']' ?>"
+                       name="<?php echo $model->field('lastname') ?>"
                        placeholder="<?php echo translate('Last name') ?>" value="<?php echo $model->lastname ?>">
             </div>
         </div>
@@ -46,7 +44,7 @@ $contactForm = $model->fieldName('Contact');
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
                 <input class="form-control" type="text"
-                       name="<?php echo $contactForm.'['.$model->fieldName('email').']' ?>"
+                       name="<?php echo $model->field('email') ?>"
                        placeholder="<?php echo translate('Email') ?>" value="<?php echo $model->email ?>">
             </div>
         </div>
@@ -55,7 +53,7 @@ $contactForm = $model->fieldName('Contact');
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
                 <input class="form-control" type="text"
-                       name="<?php echo $contactForm.'['.$model->fieldName('address').']' ?>"
+                       name="<?php echo $model->field('address') ?>"
                        placeholder="<?php echo translate('Address') ?>" value="<?php echo $model->address ?>">
             </div>
         </div>
@@ -64,7 +62,7 @@ $contactForm = $model->fieldName('Contact');
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
                 <input class="form-control" type="text"
-                       name="<?php echo $contactForm.'['.$model->fieldName('phone').']' ?>"
+                       name="<?php echo $model->field('phone') ?>"
                        placeholder="<?php echo translate('Phone') ?>" value="<?php echo $model->phone ?>">
             </div>
         </div>
@@ -74,7 +72,7 @@ $contactForm = $model->fieldName('Contact');
         </div>
         <div class="col-xs-4">
             <button type="submit" class="btn btn-primary btn-block btn-flat"
-                    name="<?php echo $model->fieldName('save-button') ?>"
+                    name="<?php echo $model->field('save-button') ?>"
                     value="login"><?php echo translate('Save') ?>
             </button>
         </div>

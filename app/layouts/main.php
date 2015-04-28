@@ -31,7 +31,7 @@ use \cordillera\middlewares\Layout;
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-main-navbar-collapse">
-                <span class="sr-only"><?php echo Application::getLang()->translate('Toggle navigation') ?></span>
+                <span class="sr-only"><?php echo translate('Toggle navigation') ?></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -46,19 +46,19 @@ use \cordillera\middlewares\Layout;
                 </li>
                 <li id="link_2">
                     <a href="<?php echo Url::relative('examples/contacts/index') ?>">
-                        <?php echo Application::getLang()->translate('Contacts') ?>
+                        <?php echo translate('Contacts') ?>
                     </a>
                 </li>
                 <?php if (!Application::getAuth()->id): ?>
                     <li id="link_3">
                         <a href="<?php echo Url::relative('examples/site/login') ?>">
-                            <?php echo Application::getLang()->translate('Login') ?>
+                            <?php echo translate('Login') ?>
                         </a>
                     </li>
                 <?php else: ?>
                     <li id="link_4">
                         <a href="<?php echo Url::relative('examples/site/logout') ?>">
-                            <?php echo Application::getLang()->translate(
+                            <?php echo translate(
                                 'Logout (%s)', [Application::getAuth()->data['username']]
                             ) ?>
                         </a>

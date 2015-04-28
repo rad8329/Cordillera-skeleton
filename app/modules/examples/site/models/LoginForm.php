@@ -2,12 +2,11 @@
 
 namespace modules\examples\site\models;
 
-use cordillera\base\Application;
-use cordillera\middlewares\db\Model;
+use cordillera\base\traits\Form;
 
 class LoginForm
 {
-    use Model;
+    use Form;
 
     public $username;
     public $password;
@@ -28,17 +27,17 @@ class LoginForm
     public function validate()
     {
         if (empty($this->username)) {
-            $this->addError('username', Application::getLang()->translate('The username is requiered.'));
+            $this->addError('username', translate('The username is requiered.'));
         }
         if (!$this->hasError('username') && !isset($this->_users[$this->username])) {
-            $this->addError('username', Application::getLang()->translate('The user does not exist.'));
+            $this->addError('username', translate('The user does not exist.'));
         }
 
         if (empty($this->password)) {
-            $this->addError('password', Application::getLang()->translate('The password is requiered.'));
+            $this->addError('password', translate('The password is requiered.'));
         }
         if (!$this->hasError('password') && isset($this->_users[$this->username]) && $this->_users[$this->username]['password'] != $this->password) {
-            $this->addError('password', Application::getLang()->translate('The password does not match.'));
+            $this->addError('password', translate('The password does not match.'));
         }
 
         return empty($this->_errors);

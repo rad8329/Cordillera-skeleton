@@ -43,7 +43,7 @@ $this->post(function () use ($model, $view) {
         Application::getAuth()->login($data['id'], $data);
         Application::getSession()->put(
             'flash.success',
-            Application::getLang()->translate(
+            translate(
                 '<strong>%s</strong>, welcome to Cordillera framework',
                 [$model->username]
             )

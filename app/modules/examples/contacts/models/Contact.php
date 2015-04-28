@@ -2,7 +2,6 @@
 
 namespace modules\examples\contacts\models;
 
-use cordillera\base\Application;
 use cordillera\middlewares\db\ActiveRecord;
 
 class Contact extends ActiveRecord
@@ -26,23 +25,23 @@ class Contact extends ActiveRecord
     public function validate()
     {
         if (empty($this->firstname)) {
-            $this->addError('firstname', Application::getLang()->translate('First name is requiered'));
+            $this->addError('firstname', translate('First name is requiered'));
         }
 
         if (empty($this->lastname)) {
-            $this->addError('lastname', Application::getLang()->translate('Last name is requiered'));
+            $this->addError('lastname', translate('Last name is requiered'));
         }
 
         if (empty($this->email)) {
-            $this->addError('email', Application::getLang()->translate('Email is requiered'));
+            $this->addError('email', translate('Email is requiered'));
         }
 
         if (empty($this->phone)) {
-            $this->addError('phone', Application::getLang()->translate('Phone is requiered'));
+            $this->addError('phone', translate('Phone is requiered'));
         }
 
         if (empty($this->gender)) {
-            $this->addError('gender', Application::getLang()->translate('Gender is requiered'));
+            $this->addError('gender', translate('Gender is requiered'));
         }
 
         if ($this->hasErrors()) {
