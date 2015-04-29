@@ -6,17 +6,17 @@ use cordillera\base\Application;
 /* @var string $contactForm */
 ?>
 <form id="context-form-contact" class="form-horizontal" method="post" onsubmit="return Contact.form.submit(this);">
-    <input type="hidden" name="<?php echo $model->field(Application::getRequest()->csrf_id) ?>"
-           value="<?php echo Application::getRequest()->csrf_value ?>">
+    <input type="hidden" name="<?= $model->field(Application::getRequest()->csrf_id) ?>"
+           value="<?= Application::getRequest()->csrf_value ?>">
     <div id="field-gender" class="clearfix required">
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
-                <select class="form-control" name="<?php echo $model->field('gender') ?>">
-                    <option value="<?php echo translate('female') ?>" <?php echo $model->gender == 'female' ? 'selected' : '' ?>>
-                        <?php echo translate('Female') ?>
+                <select class="form-control" name="<?= $model->field('gender') ?>">
+                    <option value="<?= translate('female') ?>" <?= $model->gender == 'female' ? 'selected' : '' ?>>
+                        <?= translate('Female') ?>
                     </option>
-                    <option value="<?php echo translate('male') ?>" <?php echo $model->gender == 'male' ? 'selected' : '' ?>>
-                        <?php echo translate('Male') ?>
+                    <option value="<?= translate('male') ?>" <?= $model->gender == 'male' ? 'selected' : '' ?>>
+                        <?= translate('Male') ?>
                     </option>
                 </select>
             </div>
@@ -26,8 +26,8 @@ use cordillera\base\Application;
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
                 <input class="form-control" type="text"
-                       name="<?php echo $model->field('firstname') ?>"
-                       placeholder="<?php echo translate('First name') ?>" value="<?php echo $model->firstname ?>">
+                       name="<?= $model->field('firstname') ?>"
+                       placeholder="<?= translate('First name') ?>" value="<?= $model->firstname ?>">
             </div>
         </div>
     </div>
@@ -35,8 +35,8 @@ use cordillera\base\Application;
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
                 <input class="form-control" type="text"
-                       name="<?php echo $model->field('lastname') ?>"
-                       placeholder="<?php echo translate('Last name') ?>" value="<?php echo $model->lastname ?>">
+                       name="<?= $model->field('lastname') ?>"
+                       placeholder="<?= translate('Last name') ?>" value="<?= $model->lastname ?>">
             </div>
         </div>
     </div>
@@ -44,8 +44,8 @@ use cordillera\base\Application;
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
                 <input class="form-control" type="text"
-                       name="<?php echo $model->field('email') ?>"
-                       placeholder="<?php echo translate('Email') ?>" value="<?php echo $model->email ?>">
+                       name="<?= $model->field('email') ?>"
+                       placeholder="<?= translate('Email') ?>" value="<?= $model->email ?>">
             </div>
         </div>
     </div>
@@ -53,8 +53,8 @@ use cordillera\base\Application;
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
                 <input class="form-control" type="text"
-                       name="<?php echo $model->field('address') ?>"
-                       placeholder="<?php echo translate('Address') ?>" value="<?php echo $model->address ?>">
+                       name="<?= $model->field('address') ?>"
+                       placeholder="<?= translate('Address') ?>" value="<?= $model->address ?>">
             </div>
         </div>
     </div>
@@ -62,8 +62,8 @@ use cordillera\base\Application;
         <div class="form-group form-group-lg">
             <div class="col-sm-12">
                 <input class="form-control" type="text"
-                       name="<?php echo $model->field('phone') ?>"
-                       placeholder="<?php echo translate('Phone') ?>" value="<?php echo $model->phone ?>">
+                       name="<?= $model->field('phone') ?>"
+                       placeholder="<?= translate('Phone') ?>" value="<?= $model->phone ?>">
             </div>
         </div>
     </div>
@@ -72,8 +72,8 @@ use cordillera\base\Application;
         </div>
         <div class="col-xs-4">
             <button type="submit" class="btn btn-primary btn-block btn-flat"
-                    name="<?php echo $model->field('save-button') ?>"
-                    value="login"><?php echo translate('Save') ?>
+                    name="<?= $model->field('save-button') ?>"
+                    value="login"><?= translate('Save') ?>
             </button>
         </div>
     </div>
