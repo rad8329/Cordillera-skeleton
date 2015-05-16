@@ -1,5 +1,5 @@
 <?php
-use cordillera\base\Application;
+use cordillera\base\Cordillera;
 use cordillera\helpers\Url;
 
 /* @var \modules\examples\site\models\LoginForm $model */
@@ -8,8 +8,8 @@ use cordillera\helpers\Url;
 ?>
 <div id="login-box">
     <form action="<?= Url::relative('examples/site/login') ?>" method="post" id="loginform">
-        <input type="hidden" name="<?= $model->field(Application::getRequest()->csrf_id) ?>"
-               value="<?= Application::getRequest()->csrf_value ?>">
+        <input type="hidden" name="<?= $model->field(Cordillera::app()->request->csrf_id) ?>"
+               value="<?= Cordillera::app()->request->csrf_value ?>">
 
         <div class="clearfix field-loginform-username required <?= $model->hasError('username') ? 'has-error' : '' ?>">
             <div class="form-group has-feedback clearfix">

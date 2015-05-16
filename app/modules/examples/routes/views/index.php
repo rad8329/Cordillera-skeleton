@@ -1,5 +1,5 @@
 <?php
-use cordillera\base\Application;
+use cordillera\base\Cordillera;
 use modules\examples\routes\models\Route;
 use cordillera\helpers\Url;
 use cordillera\helpers\Crypt;
@@ -12,8 +12,8 @@ use cordillera\helpers\Crypt;
 $this->layout->registerJsFile(
     '//maps.google.com/maps/api/js??key=AIzaSyC1TDjFx7XwbbG7tduhePPyvbSN6VXi9GY&sensor=false&libraries=places'
 );
-$this->layout->registerJsFile(Application::getRequest()->base_url.'media/modules/examples/routes/js/marker.js');
-$this->layout->registerCssFile(Application::getRequest()->base_url.'media/modules/examples/routes/css/marker.css');
+$this->layout->registerJsFile(Cordillera::app()->request->base_url.'media/modules/examples/routes/js/marker.js');
+$this->layout->registerCssFile(Cordillera::app()->request->base_url.'media/modules/examples/routes/css/marker.css');
 ?>
 <div class="row-offcanvas row-offcanvas-left">
     <div id="sidebar" class="sidebar-offcanvas">
@@ -47,7 +47,7 @@ $this->layout->registerCssFile(Application::getRequest()->base_url.'media/module
 <script type="text/javascript">
     //Marker.source_url = '<?= Url::relative('examples/routes/get')?>'; // If request method is POST
     Marker.source_url = '<?= Url::relative('examples/routes/get', ['id' => $id])?>';// If request method is GET
-    Marker.csrf_id = '<?= Crypt::requestVar(Application::getRequest()->csrf_id);?>';// If request method is POST
-    Marker.csrf_value = '<?= Application::getRequest()->csrf_value;?>';// If request method is POST
+    Marker.csrf_id = '<?= Crypt::requestVar(Cordillera::app()->request->csrf_id);?>';// If request method is POST
+    Marker.csrf_value = '<?= Cordillera::app()->request->csrf_value;?>';// If request method is POST
     Marker.init(<?= (int) $id;?>);
 </script>

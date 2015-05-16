@@ -1,8 +1,8 @@
 <?php
 
-use \cordillera\base\Application;
-use \cordillera\helpers\Url;
-use \cordillera\middlewares\Layout;
+use cordillera\base\Cordillera;
+use cordillera\helpers\Url;
+use cordillera\middlewares\Layout;
 
 /* @var string $content */
 /* @var \cordillera\middlewares\Layout $this */
@@ -17,11 +17,11 @@ use \cordillera\middlewares\Layout;
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-flash.css"/>
-    <link rel="stylesheet" type="text/css" href="<?= Application::getRequest()->base_url ?>media/css/cordillera.css">
-    <link rel="stylesheet" type="text/css" href="<?= Application::getRequest()->base_url ?>media/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="<?= Cordillera::app()->request->base_url ?>media/css/cordillera.css">
+    <link rel="stylesheet" type="text/css" href="<?= Cordillera::app()->request->base_url ?>media/css/custom.css">
     <script src="//code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="<?= Application::getRequest()->base_url ?>media/js/bootstrap-confirmation.min.js" type="text/javascript"></script>
+    <script src="<?= Cordillera::app()->request->base_url ?>media/js/bootstrap-confirmation.min.js" type="text/javascript"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" type="text/javascript"></script>
     <?= $this->publishRegisteredFiles() ?>
 </head>
@@ -36,20 +36,20 @@ use \cordillera\middlewares\Layout;
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?= Application::getRequest()->home ?>">Cordillera framework</a>
+            <a class="navbar-brand" href="<?= Cordillera::app()->request->home ?>">Cordillera framework</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-main-navbar-collapse">
             <ul class="nav navbar-nav">
                 <li id="link_1">
-                    <a href="<?= cordillera\helpers\Url::relative('examples/routes/index') ?>">Medellín bus routes</a>
+                    <a href="<?= Url::relative('examples/routes/index') ?>">Medellín bus routes</a>
                 </li>
                 <li id="link_2">
                     <a href="<?= Url::relative('examples/contacts/index') ?>">
                         <?= translate('Contacts') ?>
                     </a>
                 </li>
-                <?php if (!Application::getAuth()->id): ?>
+                <?php if (!Cordillera::app()->auth->id): ?>
                     <li id="link_3">
                         <a href="<?= Url::relative('examples/site/login') ?>">
                             <?= translate('Login') ?>
@@ -59,7 +59,7 @@ use \cordillera\middlewares\Layout;
                     <li id="link_4">
                         <a href="<?= Url::relative('examples/site/logout') ?>">
                             <?= translate(
-                                'Logout (%s)', [Application::getAuth()->data['username']]
+                                'Logout (%s)', [Cordillera::app()->auth->data['username']]
                             ) ?>
                         </a>
                     </li>
@@ -70,22 +70,22 @@ use \cordillera\middlewares\Layout;
     </div>
     <!-- /.container-fluid -->
 </nav>
-<?php if (Application::getSession()->get('flash.success')): ?>
+<?php if (Cordillera::app()->session->get('flash.success')): ?>
     <div class="container">
         <div class="alert alert-info" role="alert">
-            <?= Application::getSession()->get('flash.success') ?>
+            <?= Cordillera::app()->session->get('flash.success') ?>
         </div>
     </div>
 <?php endif ?>
-<?php if (Application::getSession()->get('flash.error')): ?>
+<?php if (Cordillera::app()->session->get('flash.error')): ?>
     <div class="container">
         <div class="alert alert-danger" role="alert">
-            <?= Application::getSession()->get('flash.error') ?>
+            <?= Cordillera::app()->session->get('flash.error') ?>
         </div>
     </div>
 <?php endif ?>
 <?= $content ?>
-<script src="<?= Application::getRequest()->base_url ?>media/js/cordillera.js" type="text/javascript"></script>
+<script src="<?= Cordillera::app()->request->base_url ?>media/js/cordillera.js" type="text/javascript"></script>
 <?= $this->publishRegisteredFiles(Layout::END_SCOPE) ?>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 namespace modules\examples\contacts;
 
-use cordillera\base\Application;
+use cordillera\base\Cordillera;
 use cordillera\helpers\Url;
 use cordillera\middlewares\Controller;
 use cordillera\middlewares\Exception;
@@ -24,4 +24,4 @@ if ($model) {
     throw new Exception(translate('Record was not found'), 404, Exception::NOTFOUND);
 }
 
-Application::getRequest()->redirect(Url::relative('examples/contacts/index'));
+Cordillera::app()->request->redirect(Url::relative('examples/contacts/index'));
