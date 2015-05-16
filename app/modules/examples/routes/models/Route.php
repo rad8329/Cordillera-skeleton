@@ -3,7 +3,7 @@
 namespace modules\examples\routes\models;
 
 use modules\examples\routes\helpers\Geom;
-use cordillera\middlewares\db\ActiveRecord;
+use cordillera\middlewares\db\adapters\sql\ActiveRecord;
 
 class Route extends ActiveRecord
 {

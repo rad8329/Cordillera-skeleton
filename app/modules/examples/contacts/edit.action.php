@@ -21,7 +21,7 @@ $this->filters(function () {
 
     /* @var Controller $this */
 
-    $this->assertAjax();
+    $this->filter->assertAjax();
 });
 
 $this->get(function () use ($model) {

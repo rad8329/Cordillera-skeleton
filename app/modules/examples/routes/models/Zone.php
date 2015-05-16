@@ -2,7 +2,7 @@
 
 namespace modules\examples\routes\models;
 
-use cordillera\middlewares\db\ActiveRecord;
+use cordillera\middlewares\db\adapters\sql\ActiveRecord;
 
 class Zone extends ActiveRecord
 {

@@ -11,8 +11,8 @@ use cordillera\middlewares\Request;
 $this->filters(function () {
     /* @var Controller $this */
 
-    $this->assertAjax();
-    $this->assertJsonContentType();
+    $this->filter->assertAjax();
+    $this->filter->assertJsonContentType();
 });
 
 $this->get(function () {

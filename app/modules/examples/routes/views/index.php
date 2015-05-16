@@ -33,7 +33,7 @@ $this->layout->registerCssFile(Application::getRequest()->base_url.'media/module
                     foreach ($routes as $route) {
                         echo "\n<li id=\"route_{$route->id}\" class=\"route list-group-item".
                             ($id == $route->id ? ' active' : '')."\" data-id=\"{$route->id}\">".
-                            "<a href=\"".Url::relative('examples/routes/index', ['id' => $route->id]).
+                            '<a href="'.Url::relative('examples/routes/index', ['id' => $route->id]).
                             "\">{$route->name}</a></li>";
                     }
                     echo "\n</ul>";
