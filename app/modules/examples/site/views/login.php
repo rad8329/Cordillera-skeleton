@@ -7,38 +7,38 @@ use cordillera\helpers\Url;
 /* @var \cordillera\middlewares\View $this */
 ?>
 <div id="login-box">
-    <form action="<?php echo Url::relative('examples/site/login') ?>" method="post" id="loginform">
-        <input type="hidden" name="<?php echo $model->field(Application::getRequest()->csrf_id) ?>"
-               value="<?php echo Application::getRequest()->csrf_value ?>">
+    <form action="<?= Url::relative('examples/site/login') ?>" method="post" id="loginform">
+        <input type="hidden" name="<?= $model->field(Application::getRequest()->csrf_id) ?>"
+               value="<?= Application::getRequest()->csrf_value ?>">
 
-        <div class="clearfix field-loginform-username required <?php echo $model->hasError('username') ? 'has-error' : '' ?>">
+        <div class="clearfix field-loginform-username required <?= $model->hasError('username') ? 'has-error' : '' ?>">
             <div class="form-group has-feedback clearfix">
                 <input type="text" id="loginform-username" class="form-control"
-                       name="<?php echo $model->field('username') ?>"
-                       placeholder="<?php echo translate('Username') ?>"
-                       value="<?php echo $model->username ?>">
+                       name="<?= $model->field('username') ?>"
+                       placeholder="<?= translate('Username') ?>"
+                       value="<?= $model->username ?>">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <?php if ($model->hasError('username')): ?>
                 <div class="help-block">
                     <?php foreach ($model->getErrors('username') as $error): ?>
-                        <div class="clearfix"><?php echo $error ?></div>
+                        <div class="clearfix"><?= $error ?></div>
                     <?php endforeach ?>
                 </div>
             <?php endif ?>
         </div>
-        <div class="clearfix field-loginform-password required <?php echo $model->hasError('password') ? 'has-error' : '' ?>">
+        <div class="clearfix field-loginform-password required <?= $model->hasError('password') ? 'has-error' : '' ?>">
             <div class="form-group has-feedback clearfix">
                 <input type="password" id="loginform-password" class="form-control"
-                       name="<?php echo $model->field('password') ?>"
-                       placeholder="<?php echo translate('Password') ?>"
-                       value="<?php echo $model->password ?>">
+                       name="<?= $model->field('password') ?>"
+                       placeholder="<?= translate('Password') ?>"
+                       value="<?= $model->password ?>">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <?php if ($model->hasError('password')): ?>
                 <div class="help-block">
                     <?php foreach ($model->getErrors('password') as $error): ?>
-                        <div class="clearfix"><?php echo $error ?></div>
+                        <div class="clearfix"><?= $error ?></div>
                     <?php endforeach ?>
                 </div>
             <?php endif ?>
@@ -48,8 +48,8 @@ use cordillera\helpers\Url;
             </div>
             <div class="col-xs-4">
                 <button type="submit" class="btn btn-primary btn-block btn-flat"
-                        name="<?php echo $model->field('login-button') ?>"
-                        value="login"><?php echo translate('Login') ?>
+                        name="<?= $model->field('login-button') ?>"
+                        value="login"><?= translate('Login') ?>
                 </button>
             </div>
         </div>

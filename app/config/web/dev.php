@@ -27,7 +27,7 @@ return [
         'default' => 'examples/site/index',
     ],
     'router' => [
-        'show_index_file' => true,
+        'show_index_file' => false,
         'rules' => require CORDILLERA_APP_DIR.'config'.DS.'routers.php',
     ],
     'exception' => [

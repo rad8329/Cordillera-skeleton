@@ -17,22 +17,22 @@ $this->layout->registerCssFile(Application::getRequest()->base_url.'media/module
         <div class="col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-heading c-list">
-                    <span class="title"><?php echo translate('Contacts') ?></span>
+                    <span class="title"><?= translate('Contacts') ?></span>
                     <ul class="pull-right c-controls">
                         <?php if (Application::getAuth()->id): ?>
                             <?php if ($total >= 20): ?>
                                 <li>
                                     <span data-toggle="tooltip"
-                                          title="<?php echo translate('Contacts limit (20)') ?>">
+                                          title="<?= translate('Contacts limit (20)') ?>">
                                         <i class="glyphicon glyphicon-exclamation-sign"></i>
                                     </span>
                                 </li>
                             <?php else: ?>
                                 <li>
                                     <a href="#form-contact" data-toggle="tooltip" data-placement="top"
-                                       data-context-handler="<?php echo Url::relative('examples/contacts/add') ?>"
-                                       data-modal-title="<?php echo translate('Add a contact') ?>"
-                                       title="<?php echo translate('Add Contact') ?>">
+                                       data-context-handler="<?= Url::relative('examples/contacts/add') ?>"
+                                       data-modal-title="<?= translate('Add a contact') ?>"
+                                       title="<?= translate('Add Contact') ?>">
                                         <i class="fa fa-plus"></i>
                                     </a>
                                 </li>
@@ -41,7 +41,7 @@ $this->layout->registerCssFile(Application::getRequest()->base_url.'media/module
                         <li>
                             <a href="#" class="hide-search" data-command="toggle-search" data-toggle="tooltip"
                                data-placement="top"
-                               title="<?php echo translate('Toggle Search') ?>">
+                               title="<?= translate('Toggle Search') ?>">
                                 <i class="fa fa-ellipsis-v"></i>
                             </a>
                         </li>
@@ -63,44 +63,44 @@ $this->layout->registerCssFile(Application::getRequest()->base_url.'media/module
                     <?php foreach ($contacts as $contact): ?>
                         <li class="list-group-item">
                             <div class="col-xs-12 col-sm-3">
-                                <img src="<?php echo $contact->getAvatar() ?>" alt="<?php echo $contact->fullName() ?>"
+                                <img src="<?= $contact->getAvatar() ?>" alt="<?= $contact->fullName() ?>"
                                      class="img-responsive img-circle"/>
                             </div>
                             <div class="col-xs-12 col-sm-9">
                                 <?php if (Application::getAuth()->id): ?>
                                     <div class="pull-right options">
-                                        <a data-toggle="tooltip" title="<?php echo translate('Edit contact') ?>"
-                                           data-modal-title="<?php echo translate('Edit a contact') ?>"
+                                        <a data-toggle="tooltip" title="<?= translate('Edit contact') ?>"
+                                           data-modal-title="<?= translate('Edit a contact') ?>"
                                            class="edit-trigger"
-                                           href="<?php echo Url::relative('examples/contacts/edit', ['id' => $contact->id]) ?>">
+                                           href="<?= Url::relative('examples/contacts/edit', ['id' => $contact->id]) ?>">
                                             <i class="fa fa-pencil-square"></i></a>
                                         <a data-toggle="confirmation"
-                                           title="<?php echo translate('Are you sure to delete this record?') ?>"
+                                           title="<?= translate('Are you sure to delete this record?') ?>"
                                            class="delete-trigger"
-                                           href="<?php echo Url::relative('examples/contacts/delete', ['id' => $contact->id]) ?>">
+                                           href="<?= Url::relative('examples/contacts/delete', ['id' => $contact->id]) ?>">
                                             <i class="fa fa-trash"></i></a>
                                     </div>
                                 <?php endif; ?>
                                 <div>
-                                    <span class="name"><?php echo $contact->fullName() ?></span>
+                                    <span class="name"><?= $contact->fullName() ?></span>
                                 </div>
                                 <?php if ($contact->address): ?>
                                     <div class="clearfix">
                                     <span class="fa fa-map-marker text-muted c-info"
                                           data-toggle="tooltip"
-                                          title="<?php echo $contact->address ?>"></span><span
-                                            class="text-muted"><?php echo $contact->address ?></span>
+                                          title="<?= $contact->address ?>"></span><span
+                                            class="text-muted"><?= $contact->address ?></span>
                                     </div>
                                 <?php endif; ?>
                                 <div class="clearfix">
                                     <span class="fa fa-phone text-muted c-info" data-toggle="tooltip"
-                                          title="<?php echo $contact->phone ?>"></span><span
-                                        class="text-muted"><?php echo $contact->phone ?></span>
+                                          title="<?= $contact->phone ?>"></span><span
+                                        class="text-muted"><?= $contact->phone ?></span>
                                 </div>
                                 <div class="clearfix">
                                     <span class="fa fa-comments text-muted c-info" data-toggle="tooltip"
-                                          title="<?php echo $contact->email ?>"></span><span
-                                        class="text-muted"><?php echo $contact->email ?></span>
+                                          title="<?= $contact->email ?>"></span><span
+                                        class="text-muted"><?= $contact->email ?></span>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
@@ -118,7 +118,7 @@ $this->layout->registerCssFile(Application::getRequest()->base_url.'media/module
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h4 class="modal-title" id="modal-label">
-                            <?php echo translate('Add a contact') ?>
+                            <?= translate('Add a contact') ?>
                         </h4>
                     </div>
                     <div class="modal-body" id="form-contact-body">
