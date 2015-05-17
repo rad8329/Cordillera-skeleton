@@ -2,7 +2,6 @@
 
 namespace modules\examples\contacts;
 
-use cordillera\base\Cordillera;
 use cordillera\middlewares\Controller;
 use cordillera\middlewares\Layout;
 use cordillera\middlewares\View;
@@ -15,7 +14,7 @@ use modules\examples\contacts\models\Contact;
 /* @var Controller $this */
 /* @var Contact $model */
 
-$model = Contact::findByPk(Cordillera::app()->request->get('id'));
+$model = Contact::findByPk(app()->request->get('id'));
 
 $this->filters(function () {
 
@@ -40,12 +39,12 @@ $this->post(function () use ($model) {
     /* @var Contact $model */
 
     $data = [
-        'firstname' => Cordillera::app()->request->post('Contact.firstname'),
-        'lastname' => Cordillera::app()->request->post('Contact.lastname'),
-        'email' => Cordillera::app()->request->post('Contact.email'),
-        'phone' => Cordillera::app()->request->post('Contact.phone'),
-        'address' => Cordillera::app()->request->post('Contact.address'),
-        'gender' => Cordillera::app()->request->post('Contact.gender'),
+        'firstname' => app()->request->post('Contact.firstname'),
+        'lastname' => app()->request->post('Contact.lastname'),
+        'email' => app()->request->post('Contact.email'),
+        'phone' => app()->request->post('Contact.phone'),
+        'address' => app()->request->post('Contact.address'),
+        'gender' => app()->request->post('Contact.gender'),
         'updated_at' => time(),
     ];
 

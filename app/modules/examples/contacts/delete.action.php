@@ -2,7 +2,6 @@
 
 namespace modules\examples\contacts;
 
-use cordillera\base\Cordillera;
 use cordillera\helpers\Url;
 use cordillera\middlewares\Controller;
 use cordillera\middlewares\Exception;
@@ -15,7 +14,7 @@ use modules\examples\contacts\models\Contact;
 /* @var Controller $this */
 /* @var Contact $model */
 
-$model = Contact::findByPk(Cordillera::app()->request->get('id'));
+$model = Contact::findByPk(app()->request->get('id'));
 
 if ($model) {
     $model->delete();
@@ -23,4 +22,4 @@ if ($model) {
     throw new Exception(translate('Record was not found'), 404, Exception::NOTFOUND);
 }
 
-Cordillera::app()->request->redirect(Url::relative('examples/contacts/index'));
+$this->redirect(Url::relative('examples/contacts/index'));

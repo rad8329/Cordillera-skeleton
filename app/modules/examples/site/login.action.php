@@ -2,7 +2,6 @@
 
 namespace modules\examples\site;
 
-use cordillera\base\Cordillera;
 use cordillera\middlewares\Controller;
 use cordillera\middlewares\Layout;
 use cordillera\middlewares\View;
@@ -14,9 +13,10 @@ $model = new LoginForm();
 $view = new View('modules/examples/site/views/login', new Layout('main'));
 
 $this->filters(function () {
+    /* @var Controller $this */
 
-    if (Cordillera::app()->auth->id) {
-        Cordillera::app()->request->redirect(Cordillera::app()->request->base_url);
+    if (app()->auth->id) {
+        $this->redirect(app()->request->base_url);
     }
 });
 
@@ -35,12 +35,12 @@ $this->post(function () use ($model, $view) {
 
     /* @var Controller $this */
 
-    $model->username = Cordillera::app()->request->post('LoginForm.username');
-    $model->password = Cordillera::app()->request->post('LoginForm.password');
+    $model->username = app()->request->post('LoginForm.username');
+    $model->password = app()->request->post('LoginForm.password');
 
     if ($data = $model->login()) {
-        Cordillera::app()->auth->login($data['id'], $data);
-        Cordillera::app()->session->put(
+        app()->auth->login($data['id'], $data);
+        app()->session->put(
             'flash.success',
             translate(
                 '<strong>%s</strong>, welcome to Cordillera framework',
@@ -48,7 +48,7 @@ $this->post(function () use ($model, $view) {
             )
         );
 
-        Cordillera::app()->request->redirect(Cordillera::app()->request->home);
+        $this->redirect(app()->request->home);
     }
 
     $view->data = ['model' => $model];

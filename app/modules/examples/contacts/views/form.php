@@ -1,13 +1,12 @@
 <?php
-use cordillera\base\Cordillera;
 
 /* @var \cordillera\middlewares\View $this */
 /* @var \modules\examples\contacts\models\Contact $model */
 /* @var string $contactForm */
 ?>
 <form id="context-form-contact" class="form-horizontal" method="post" onsubmit="return Contact.form.submit(this);">
-    <input type="hidden" name="<?= $model->field(Cordillera::app()->request->csrf_id) ?>"
-           value="<?= Cordillera::app()->request->csrf_value ?>">
+    <input type="hidden" name="<?= $model->field(app()->request->csrf_id) ?>"
+           value="<?= app()->request->csrf_value ?>">
     <div id="field-gender" class="clearfix required">
         <div class="form-group form-group-lg">
             <div class="col-sm-12">

@@ -1,5 +1,4 @@
 <?php
-use cordillera\base\Cordillera;
 use cordillera\helpers\Url;
 use cordillera\middlewares\View;
 use modules\examples\contacts\models\Contact;
@@ -9,8 +8,8 @@ use modules\examples\contacts\models\Contact;
 /* @var int $total */
 
 $this->layout->registerJsFile('//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js');
-$this->layout->registerJsFile(Cordillera::app()->request->base_url.'media/modules/examples/contacts/js/contacts.js');
-$this->layout->registerCssFile(Cordillera::app()->request->base_url.'media/modules/examples/contacts/css/contacts.css');
+$this->layout->registerJsFile(app()->request->base_url.'media/modules/examples/contacts/js/contacts.js');
+$this->layout->registerCssFile(app()->request->base_url.'media/modules/examples/contacts/css/contacts.css');
 ?>
 <div class="container" id="contacts-module">
     <div class="row">
@@ -19,7 +18,7 @@ $this->layout->registerCssFile(Cordillera::app()->request->base_url.'media/modul
                 <div class="panel-heading c-list">
                     <span class="title"><?= translate('Contacts') ?></span>
                     <ul class="pull-right c-controls">
-                        <?php if (Cordillera::app()->auth->id): ?>
+                        <?php if (app()->auth->id): ?>
                             <?php if ($total >= 20): ?>
                                 <li>
                                     <span data-toggle="tooltip"
@@ -67,7 +66,7 @@ $this->layout->registerCssFile(Cordillera::app()->request->base_url.'media/modul
                                      class="img-responsive img-circle"/>
                             </div>
                             <div class="col-xs-12 col-sm-9">
-                                <?php if (Cordillera::app()->auth->id): ?>
+                                <?php if (app()->auth->id): ?>
                                     <div class="pull-right options">
                                         <a data-toggle="tooltip" title="<?= translate('Edit contact') ?>"
                                            data-modal-title="<?= translate('Edit a contact') ?>"
@@ -110,7 +109,7 @@ $this->layout->registerCssFile(Cordillera::app()->request->base_url.'media/modul
             </div>
         </div>
     </div>
-    <?php if (Cordillera::app()->auth->id): ?>
+    <?php if (app()->auth->id): ?>
         <div id="form-contact" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-label"
              aria-hidden="true">
             <div class="modal-dialog">
