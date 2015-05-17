@@ -5,7 +5,6 @@ namespace modules\examples\site;
 use cordillera\base\Cordillera;
 use cordillera\middlewares\Controller;
 use cordillera\middlewares\Layout;
-use cordillera\middlewares\Request;
 use cordillera\middlewares\View;
 use modules\examples\site\models\LoginForm;
 
@@ -36,8 +35,8 @@ $this->post(function () use ($model, $view) {
 
     /* @var Controller $this */
 
-    $model->username = Request::post('LoginForm.username');
-    $model->password = Request::post('LoginForm.password');
+    $model->username = Cordillera::app()->request->post('LoginForm.username');
+    $model->password = Cordillera::app()->request->post('LoginForm.password');
 
     if ($data = $model->login()) {
         Cordillera::app()->auth->login($data['id'], $data);

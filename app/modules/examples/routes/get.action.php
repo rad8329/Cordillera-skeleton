@@ -4,7 +4,7 @@ namespace modules\examples\routes;
 
 use cordillera\middlewares\Controller;
 use modules\examples\routes\models\Route;
-use cordillera\middlewares\Request;
+use cordillera\base\Cordillera;
 
 /* @var Controller $this */
 
@@ -19,9 +19,9 @@ $this->get(function () {
 
     /* @var Controller $this */
 
-    //$route = Route::findByPk(Request::payload('id')); // If request method is POST and Payload
+    //$route = Route::findByPk(Cordillera::app()->request->payload('id')); // If request method is POST and Payload
 
-    $route = Route::findByPk(Request::get('id')); // If request method is GET
+    $route = Route::findByPk(Cordillera::app()->request->get('id')); // If request method is GET
 
     $this->setResponse($route ? $route : new Route());
 });

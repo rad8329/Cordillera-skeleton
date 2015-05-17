@@ -6,7 +6,6 @@ use cordillera\base\Cordillera;
 use cordillera\helpers\Url;
 use cordillera\middlewares\Controller;
 use cordillera\middlewares\Exception;
-use cordillera\middlewares\Request;
 use modules\examples\contacts\models\Contact;
 
 /*
@@ -16,7 +15,7 @@ use modules\examples\contacts\models\Contact;
 /* @var Controller $this */
 /* @var Contact $model */
 
-$model = Contact::findByPk(Request::get('id'));
+$model = Contact::findByPk(Cordillera::app()->request->get('id'));
 
 if ($model) {
     $model->delete();

@@ -2,10 +2,10 @@
 
 namespace modules\examples\routes;
 
+use cordillera\base\Cordillera;
 use cordillera\middlewares\Controller;
 use cordillera\middlewares\Layout;
 use modules\examples\routes\models\Zone;
-use cordillera\middlewares\Request;
 use cordillera\middlewares\View;
 
 /* @var Controller $this */
@@ -13,7 +13,7 @@ use cordillera\middlewares\View;
 $this->get(function () {
 
     /* @var Controller $this */
-    $id = Request::get('id', 1);
+    $id = Cordillera::app()->request->get('id', 1);
 
     $view = new View(
         'modules/examples/routes/views/index',
