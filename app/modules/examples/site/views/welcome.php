@@ -1,6 +1,5 @@
 <?php
 
-
 /* @var \cordillera\middlewares\View $this */
 
 ?>
