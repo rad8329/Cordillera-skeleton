@@ -7,6 +7,7 @@ return [
     ['routes/get/[i:id]?', 'examples/routes/get'],
     ['routes/[i:id]?', 'examples/routes/index'],
     ['routes', 'examples/routes/index'],
+    ['grid', 'examples/test/grid'],
     ['contacts', 'examples/contacts/index'],
     ['add-contact', 'examples/contacts/add'],
     ['edit-contact/[i:id]?', 'examples/contacts/edit'],
