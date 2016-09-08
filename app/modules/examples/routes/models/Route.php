@@ -30,7 +30,7 @@ class Route extends ActiveRecord
     /**
      * @param int $id
      *
-     * @return \modules\examples\routes\models\Route
+     * @return \modules\examples\routes\models\Route|\stdClass
      */
     public static function findByPk($id)
     {

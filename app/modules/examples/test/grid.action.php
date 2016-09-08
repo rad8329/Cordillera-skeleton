@@ -23,7 +23,6 @@ $this->get(function () {
                     'search' => function (ActiveRecord $scope) {
 
                         if (isset($scope->request_params['name'])) {
-
                         }
                     },
                 ]
