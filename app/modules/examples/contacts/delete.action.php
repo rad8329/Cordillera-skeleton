@@ -8,7 +8,7 @@ use cordillera\middlewares\Exception;
 use modules\examples\contacts\models\Contact;
 
 /*
- * @TODO: We must check if the current user is logged, but you can do it :)
+ * @TODO: We must check if the current user is logged
  */
 
 /* @var Controller $this */
