@@ -1,13 +1,22 @@
 <?php
 
-$config = [
+$config = [];
 
-    'db' => [
-        // IP address instead hostname - Performance UP 100%
-        'dsn' => 'mysql:host=us-cdbr-iron-east-01.cleardb.net;port=3306;dbname=heroku_656ffe765e1c295;charset=utf8',
-        'username' => 'b5c20bd8030ce0',
-        'password' => '1a11ba4fb9ce4c7',
-    ],
-];
+$dsn = getenv('CLEARDB_DATABASE_URL');
+$user = getenv('CLEARDB_DATABASE_USER');
+$password = getenv('CLEARDB_DATABASE_PASSWORD');
+
+if ($dsn && $user && $password) {
+
+    $config = [
+
+        'db' => [
+            // IP address instead hostname - Performance UP 100%
+            'dsn' => $dsn,
+            'username' =>$user,
+            'password' => $password,
+        ],
+    ];
+}
 
 return $config;
