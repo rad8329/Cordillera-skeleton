@@ -19,9 +19,14 @@
     }
   ],
   "require": {
-    "php": ">=5.4.0",
+    "php": "5.5",
     "ext-mcrypt": "*",
     "ext-json": "*",
     "rad8329/cordillera": "*"
+  },
+  "config": {
+    "platform": {
+      "php": "5.5"
+    }
   }
 }

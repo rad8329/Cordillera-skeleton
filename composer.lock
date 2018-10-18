@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a488a9c20761f7b4cc8bd2243833d1b7",
+    "content-hash": "3555f0322399e070782b3b9b17a9fb8a",
     "packages": [
         {
             "name": "psr/log",
@@ -50,15 +50,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rad8329/Cordillera.git",
-                "reference": "564d5ee3417a8b68d056121054edd3b4d0cc32a5"
+                "reference": "f483221d37745e74bcc2bf60ca2bde3c9037e90a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rad8329/Cordillera/zipball/564d5ee3417a8b68d056121054edd3b4d0cc32a5",
-                "reference": "564d5ee3417a8b68d056121054edd3b4d0cc32a5",
+                "url": "https://api.github.com/repos/rad8329/Cordillera/zipball/f483221d37745e74bcc2bf60ca2bde3c9037e90a",
+                "reference": "f483221d37745e74bcc2bf60ca2bde3c9037e90a",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
+                "ext-mcrypt": "*",
                 "php": ">=5.4",
                 "psr/log": "1.0.0"
             },
@@ -79,7 +81,7 @@
                 "framework",
                 "php"
             ],
-            "time": "2018-10-18T17:01:55+00:00"
+            "time": "2018-10-18T17:11:20+00:00"
         }
     ],
     "packages-dev": [],
@@ -89,9 +91,12 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.4.0",
+        "php": "5.5",
         "ext-mcrypt": "*",
         "ext-json": "*"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "platform-overrides": {
+        "php": "5.5"
+    }
 }

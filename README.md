@@ -1,5 +1,5 @@
 # Cordillera skeleton
-Example of skeleton application powered by Cordillera framework
+Example of skeleton application powered by Cordillera Framework
 
 **REQUIREMENTS**
 
@@ -11,12 +11,10 @@ Example of skeleton application powered by Cordillera framework
 **Startup**
 
 	$ git clone https://github.com/rad8329/Cordillera-skeleton.git
-	
-1. Create a data base
-2. Import data from `app/modules/examples/sql/schema.zip`
-3. Configure the data base properties in `app/config/web/dev.php`
-4. Located in the project root path, execute command `composer install`
+	$ cd Cordillera-skeleton
+	$ vagrant up
 
 **Demo**
 
+[http://localhost:8788/](http://localhost:8788/)
 [https://transito-medellin.herokuapp.com/](https://transito-medellin.herokuapp.com/)
