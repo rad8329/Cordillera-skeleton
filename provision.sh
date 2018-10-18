@@ -82,6 +82,7 @@ echo "GRANT PROXY ON ''@'' TO 'root'@'%' WITH GRANT OPTION" | mysql -u root --pa
 info "Initailize databases for MySQL"
 mysql -uroot -proot <<< "CREATE DATABASE cordillera_demo"
 info "Restoring databases"
+rm /cordillera/app/modules/examples/sql/schema/geom_dev.sql
 unzip /cordillera/app/modules/examples/sql/schema.zip -d /cordillera/tmp
 mysql -uroot -proot -D cordillera_demo < /cordillera/app/modules/examples/sql/schema/geom_dev.sql
 echo "Done!"
