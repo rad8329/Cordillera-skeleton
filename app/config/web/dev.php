@@ -10,13 +10,13 @@ $config = [
     ],
     'session' => [
         'key' => 'wZ32o92Xr9tXNVmF4gSP',
-        'path' => CORDILLERA_APP_DIR . 'tmp' . DS,
+        //'path' => CORDILLERA_APP_DIR . 'tmp' . DS,
         'lifetime' => 30, //Minutes
         'cookie' => [
             'lifetime' => 0,
             'path' => '/',
             //'domain' => 'cordilleralabs.com',
-            'secure' => isset($_SERVER['HTTPS']),
+            //'secure' => isset($_SERVER['HTTPS']),
             'httponly' => true,
         ],
     ],
