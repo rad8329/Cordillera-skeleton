@@ -9,7 +9,7 @@ use cordillera\helpers\Crypt;
 /* @var integer $id */
 
 $this->layout->registerJsFile(
-    '//maps.google.com/maps/api/js??key=AIzaSyC1TDjFx7XwbbG7tduhePPyvbSN6VXi9GY&sensor=false&libraries=places'
+    '//maps.google.com/maps/api/js?key=AIzaSyBHGZwKXQ_6UM8IyZONoqSCa3zbMeLfQeA&libraries=places'
 );
 $this->layout->registerJsFile(app()->request->base_url.'media/modules/examples/routes/js/marker.js');
 $this->layout->registerCssFile(app()->request->base_url.'media/modules/examples/routes/css/marker.css');
