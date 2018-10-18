@@ -1,11 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "35014fa62c7d9e9fce28abfc1f0fa9a0",
-    "content-hash": "4b62cc2169878124553577c753427997",
+    "content-hash": "a488a9c20761f7b4cc8bd2243833d1b7",
     "packages": [
         {
             "name": "psr/log",
@@ -43,7 +42,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2012-12-21T11:40:51+00:00"
         },
         {
             "name": "rad8329/cordillera",
@@ -80,7 +79,7 @@
                 "framework",
                 "php"
             ],
-            "time": "2016-11-03 14:08:26"
+            "time": "2016-11-03T14:08:26+00:00"
         }
     ],
     "packages-dev": [],
@@ -90,7 +89,9 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.4.0"
+        "php": ">=5.4.0",
+        "ext-mcrypt": "*",
+        "ext-json": "*"
     },
     "platform-dev": []
 }
