@@ -50,18 +50,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rad8329/Cordillera.git",
-                "reference": "f483221d37745e74bcc2bf60ca2bde3c9037e90a"
+                "reference": "b61d1cf9c1fac900e43f998dc71f45700cc55f00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rad8329/Cordillera/zipball/f483221d37745e74bcc2bf60ca2bde3c9037e90a",
-                "reference": "f483221d37745e74bcc2bf60ca2bde3c9037e90a",
+                "url": "https://api.github.com/repos/rad8329/Cordillera/zipball/b61d1cf9c1fac900e43f998dc71f45700cc55f00",
+                "reference": "b61d1cf9c1fac900e43f998dc71f45700cc55f00",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-mcrypt": "*",
-                "php": ">=5.4",
+                "php": ">=5.4 <7.0",
                 "psr/log": "1.0.0"
             },
             "type": "library",
@@ -81,7 +81,7 @@
                 "framework",
                 "php"
             ],
-            "time": "2018-10-18T17:11:20+00:00"
+            "time": "2018-10-19T02:54:58+00:00"
         }
     ],
     "packages-dev": [],
