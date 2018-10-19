@@ -3,10 +3,8 @@ Example of skeleton application powered by Cordillera Framework
 
 **REQUIREMENTS**
 
-* PHP >=5.4
-* ext-mcrypt
-* ext-json
-* Mysql 5.1.X (Just for the example application)
+* VirtualBox
+* Vagrant
 
 **Startup**
 
