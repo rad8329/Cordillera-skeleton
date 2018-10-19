@@ -17,6 +17,7 @@ if ($dsn && $user && $password) {
 
     $config['session'] = [
         'key' => $session_key,
+        'path' => CORDILLERA_APP_DIR . 'tmp' . DS,
         'lifetime' => 30, //Minutes
         'cookie' => [
             'lifetime' => 0,
