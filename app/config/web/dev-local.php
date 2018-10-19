@@ -20,7 +20,7 @@ if ($dsn && $user && $password) {
         'path' => CORDILLERA_APP_DIR . 'tmp' . DS,
         'lifetime' => 30, //Minutes
         'cookie' => [
-            'lifetime' => 0,
+            'lifetime' =>  time() + (24 * 60 * 60),
             'path' => '/',
             //'domain' => 'cordilleralabs.com',
             'secure' => isset($_SERVER['HTTPS']),
