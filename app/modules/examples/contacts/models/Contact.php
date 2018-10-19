@@ -67,7 +67,7 @@ class Contact extends ActiveRecord
         $avatar_id = (int) substr($this->id, -1); //No more than 10 differents avatars
 
         return sprintf(
-            'http://api.randomuser.me/portraits/%s/%d.jpg',
+            'https://api.randomuser.me/portraits/%s/%d.jpg',
             ($this->gender == 'male' ? 'men' : 'women'),
             $avatar_id == 0 ? $avatar_id + 1 : $avatar_id
         );
